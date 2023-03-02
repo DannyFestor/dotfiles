@@ -212,7 +212,9 @@ use({
 use({
   'lewis6991/gitsigns.nvim',
   config = function()
-    require('gitsigns').setup()
+    require('gitsigns').setup({
+      current_line_blame = true 
+    })
     vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
     vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>')
     vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
@@ -220,6 +222,36 @@ use({
     vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
     vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
   end,
+})
+
+-- Git Commands
+-- :G Blame, :G Browse, :G
+use({
+  'tpope/vim-fugitive',
+  requires = 'tpope/vim-rhubarb',
+})
+
+-- Floating terminal instead of default :terminal
+-- quit with ctrl_\ ctrl_n :q or :FloatermToggle
+use({
+  'voldikss/vim-floaterm',
+  config = function()
+    vim.g.floaterm_width = 0.8
+    vim.g.floaterm_height = 0.8
+
+    -- vim.g.floaterm_wintype = 'split'
+    vim.g.floaterm_wintype = 'float'
+
+    vim.keymap.set('n', '<F1>', ':FloatermToggle<CR>')
+    vim.keymap.set('n', '<C-ö>', ':FloatermToggle<CR>')
+    vim.keymap.set('t', '<F1>', '<C-\\><C-n>:FloatermToggle<CR>') -- t : terminal mode
+    vim.keymap.set('t', '<C-ö>', '<C-\\><C-n>:FloatermToggle<CR>') -- t : terminal mode
+
+    vim.cmd([[
+      highlight link Floaterm CursorLine
+      highlight link FloatermBorder CursorLine
+    ]])
+  end
 })
 
 -- -- My plugins here
