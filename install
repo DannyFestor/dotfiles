@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# -> => > >=
+# Symlinks
+# ln -s target linkname
+#
+# TODO: Update, then add all configuration files, Remove existing files
+#
+# $HOME/.zshrc
+# $HOME/.gitconfig
+# $HOME/.config/nvim
+# $HOME/.config/git/.gitignore_global
+# $HOME/.config/neofetch/config.conf
+# $HOME/.config/phpmon/config.json
+# $HOME/.config/raycast/config.json
+
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+# echo COPYING .zshrc
+# rm -rf $HOME/.zshrc
+# ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
+#
+# echo COPYING .gitconfig
+# rm -rf $HOME/.gitconfig
+# ln -s $DOTFILES/git/gitconfig $HOME/.gitconfig
+# 
+echo COPYING .config/nvim
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
+#
+# echo COPYING .config/git
+# rm -rf $HOME/.config/git
+# ln -s $DOTFILES/git $HOME/.config/git
+#
+# echo COPYING .config/phpactor
+# rm -rf $HOME/.config/phpactor
+# ln -s $DOTFILES/phpactor $HOME/.config/phpactor
+#
+# echo COPYING .config/phpmon
+# rm -rf $HOME/.config/phpmon
+# ln -s $DOTFILES/phpmon $HOME/.config/phpmon
+#
+# echo COPYING .config/raycast
+# rm -rf $HOME/.config/raycast
+# ln -s $DOTFILES/raycast $HOME/.config/raycast
+
+echo COPYING scripts
+mkdir -p $HOME/.local/bin
+rm -rf $HOME/.local/bin/t
+# ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
+
+# echo INSTALLING ZSHRC
+# if [ !-d "$HOME/.oh-my-zsh" ]; then
+#     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# fi
