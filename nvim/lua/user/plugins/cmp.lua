@@ -2,6 +2,8 @@ local cmp = require('cmp')
 local luasnip = require('luasnip')
 local lspkind = require('lspkind')
 
+require('luasnip/loaders/from_snipmate').lazy_load()
+
 -- determine if tabkey or autocompletion
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -25,7 +27,7 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
+      -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
       -- they way you will only jump inside the snippet region
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
