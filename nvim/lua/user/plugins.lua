@@ -308,6 +308,29 @@ use({
   end,
 })
 
+-- PHP Refactoring Tools: PHPactor
+use({
+  'phpactor/phpactor',
+  ft = 'php',
+  run = 'composer install --no-dev --optimize-autoloader',
+  config = function()
+    -- Will only work in .php file
+    vim.keymap.set('n', '<leader>pm', ':PhpactorContextMenu<CR>')
+    vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>')
+  end,
+})
+
+-- PHP Jump between Test and Implementation - Projectionist
+-- :shift_a - create or jump to alternate file as defined in config
+-- Create test from controller file and controller from test
+-- :Econtroller, :Emodel, :Eroute etc create file in directory as specified in config
+use({
+  'tpope/vim-projectionist',
+  requires = 'tpope/vim-dispatch',
+  config = function()
+    require('user/plugins/projectionist')
+  end,
+})
 
 -- -- My plugins here
 -- -- use 'foo1/bar1.nvim'

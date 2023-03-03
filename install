@@ -31,9 +31,9 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 # rm -rf $HOME/.config/git
 # ln -s $DOTFILES/git $HOME/.config/git
 #
-# echo COPYING .config/phpactor
-# rm -rf $HOME/.config/phpactor
-# ln -s $DOTFILES/phpactor $HOME/.config/phpactor
+echo COPYING .config/phpactor
+rm -rf $HOME/.config/phpactor
+ln -s $DOTFILES/phpactor $HOME/.config/phpactor
 #
 # echo COPYING .config/phpmon
 # rm -rf $HOME/.config/phpmon
