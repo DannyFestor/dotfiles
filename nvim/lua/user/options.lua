@@ -16,6 +16,7 @@ vim.opt.cursorline = true
 
 -- command mode (:) autocomplete behaviour change (don't autocomplete first match, so no need to delete) 
 vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and allow tabbing the results to fully complete them
+vim.opt.completeopt = 'menuone,longest,preview' -- also show menu when only one item
 
 -- show full path and filename in window/tmux information 
 vim.opt.title = true

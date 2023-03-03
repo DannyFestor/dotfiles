@@ -24,3 +24,4 @@
     footer = {},
   }
 - Additional Treesitter modules? Refactor seems cool
+- Fix not automatically adding tabs in php

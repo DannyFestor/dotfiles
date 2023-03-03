@@ -1,23 +1,37 @@
 require('mason').setup()
 require('mason-lspconfig').setup({ automatic_installation = true })
 
+-- Update vims LSP capabilities with the installed autocomplete plugin
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 -- LSP configs: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 -- PHP
-require('lspconfig').intelephense.setup({})
+require('lspconfig').intelephense.setup({ capabilities = capabilities })
 
 -- JavaScript, TypeScript, Vue
 require('lspconfig').volar.setup({
+  capabilities = capabilities,
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
 })
 
 -- TailwindCSS
-require('lspconfig').tailwindcss.setup({})
+require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 
 -- GO
-require('lspconfig').gopls.setup({})
+require('lspconfig').gopls.setup({ capabilities = capabilities })
 
 -- Dart
-require('lspconfig').dartls.setup({})
+require('lspconfig').dartls.setup({ capabilities = capabilities })
+
+-- JSON
+require('lspconfig').jsonls.setup({
+  capabilities = capabilities,
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+    },
+  },
+})
 
 -- Keymaps
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
