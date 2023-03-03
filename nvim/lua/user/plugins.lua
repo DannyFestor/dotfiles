@@ -282,6 +282,9 @@ use({
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'b0o/schemastore.nvim',
+    -- ESLint, Formatting etc Support (Gofmt, dart format as well)
+    'jose-elias-alvarez/null-ls.nvim',
+    'jayp0521/mason-null-ls.nvim',
   },
   config = function()
     require('user/plugins/lspconfig')
@@ -304,6 +307,7 @@ use({
     require('user/plugins/cmp')
   end,
 })
+
 
 -- -- My plugins here
 -- -- use 'foo1/bar1.nvim'
