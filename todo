@@ -8,3 +8,19 @@
 - Get used to tmux
 - Use tmux/vim in tandem
 - Customize Dashboard ... how to show shortcuts??
+  - https://github.com/glepnir/dashboard-nvim
+    config = {
+      center = {
+      {
+        icon = '',
+        icon_hl = 'group',
+        desc = 'description',
+        desc_hl = 'group',
+        key = 'shortcut key in dashboard buffer not keymap !!',
+        key_hl = 'group',
+        action = '',
+      },
+    },
+    footer = {},
+  }
+- Additional Treesitter modules? Refactor seems cool

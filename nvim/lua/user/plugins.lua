@@ -254,6 +254,38 @@ use({
   end
 })
 
+-- Better Syntax Highlighting (types in comments, mixed syntax as .vue components), 
+-- automatic comments etc
+-- Highlights variables in properties differently
+-- e.g. id="test" (string) and :id="test" (variable) are highlighted same by default
+-- TreeSitter knows .vue and highlights these differently
+use({
+  'nvim-treesitter/nvim-treesitter',
+  run = function()
+    require('nvim-treesitter.install').update({ with_sync = true })
+  end,
+  requires = {
+    -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Extra-modules-and-plugins
+    -- more modules
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    'nvim-treesitter/nvim-treesitter-textobjects',
+  },
+  config = function()
+    require('user/plugins/treesitter')
+  end
+})
+
+use({
+  'neovim/nvim-lspconfig',
+  requires = {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+  },
+  config = function()
+    require('user/plugins/lspconfig')
+  end
+})
+
 -- -- My plugins here
 -- -- use 'foo1/bar1.nvim'
 -- -- use 'foo2/bar2.nvim'
