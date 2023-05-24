@@ -15,6 +15,7 @@ local packer_bootstrap = ensure_packer()
 -- Initialize Packer
 require('packer').reset()
 require('packer').init({
+  max_jobs = 9,
   compile_path = vim.fn.stdpath('data')..'/site/plugin/packer_compiled.lua',
   display = {
     open_fn = function()
@@ -30,7 +31,7 @@ local use = require('packer').use
 use('wbthomason/packer.nvim')
 
 -- One Dark Theme
-use({ 'joshdick/onedark.vim', 
+use({ 'joshdick/onedark.vim',
   config = function()
     vim.cmd('colorscheme onedark')
 
@@ -56,7 +57,7 @@ use('tpope/vim-commentary') -- Comment line with gcc, 5gcc to comment out 5 line
 -- dst - delete surrounding tag
 use('tpope/vim-surround')
 
--- Useful commands like :Rename, :SudoWrite
+-- Useful commands like :Rename to rename current file, :SudoWrite
 use('tpope/vim-eunuch')
 
 -- Pairs of handy bracked mappings, like [b for :bnext (next buffer) and ]b (previous buffer)
@@ -137,7 +138,7 @@ use({
   end,
 })
 
--- Automatically fix indentation when pasing code
+-- Automatically fix indentation when pasting code
 use({
   'sickill/vim-pasta',
   config = function()
@@ -152,7 +153,7 @@ use({
     'nvim-lua/plenary.nvim',
     'kyazdani42/nvim-web-devicons',
     'nvim-telescope/telescope-live-grep-args.nvim',
-    { 
+    {
       'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
     },
   },
@@ -200,10 +201,10 @@ use({
 
 -- Add a dashboard
 use({
- 'glepnir/dashboard-nvim',
+  'glepnir/dashboard-nvim',
   requires = 'kyazdani42/nvim-web-devicons',
   config = function()
-    -- require('dashboard').setup()
+    require('dashboard').setup()
     require('user/plugins/dashboard')
   end,
 })
@@ -254,7 +255,7 @@ use({
   end
 })
 
--- Better Syntax Highlighting (types in comments, mixed syntax as .vue components), 
+-- Better Syntax Highlighting (types in comments, mixed syntax as .vue components),
 -- automatic comments etc
 -- Highlights variables in properties differently
 -- e.g. id="test" (string) and :id="test" (variable) are highlighted same by default
@@ -309,16 +310,16 @@ use({
 })
 
 -- PHP Refactoring Tools: PHPactor
-use({
-  'phpactor/phpactor',
-  ft = 'php',
-  run = 'composer install --no-dev --optimize-autoloader',
-  config = function()
-    -- Will only work in .php file
-    vim.keymap.set('n', '<leader>pm', ':PhpactorContextMenu<CR>')
-    vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>')
-  end,
-})
+-- use({
+--   'phpactor/phpactor',
+--   ft = 'php',
+--   run = 'composer install --no-dev --optimize-autoloader',
+--   config = function()
+--     -- Will only work in .php file
+--     vim.keymap.set('n', '<leader>pm', ':PhpactorContextMenu<CR>')
+--     vim.keymap.set('n', '<leader>pn', ':PhpactorClassNew<CR>')
+--   end,
+-- })
 
 -- PHP Jump between Test and Implementation - Projectionist
 -- :shift_a - create or jump to alternate file as defined in config
@@ -329,6 +330,19 @@ use({
   requires = 'tpope/vim-dispatch',
   config = function()
     require('user/plugins/projectionist')
+  end,
+})
+
+-- Run automatic tests, including PHPUnit, Pest, Go, Ginkgo, Dart Test, Flutter Test, Deno, Jest, Mocha
+-- :TestNearest - run command closest to cursor
+-- :TestClass, :TestFile, :TestSuite
+-- might need: (because defaults to sail, frustrating...)
+-- let test#php#phpunit#executable = 'phpunit'
+-- let test#php#phpunit#executable = 'php artisan test'
+use({
+  'vim-test/vim-test',
+  config = function()
+    require('user/plugins/vim-test')
   end,
 })
 

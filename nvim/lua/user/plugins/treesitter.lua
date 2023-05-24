@@ -1,8 +1,9 @@
 require('nvim-treesitter.configs').setup({
-  ensure_installed = 'all',
-  highlight = {
-    enable = true,
-    -- additional_vim_regex_highlighting = true,
+  -- ensure_installed = 'all',
+  highlight = { -- this destroys php automatic indent
+     enable = true,
+     additional_vim_regex_highlighting = true,
+     disable = { 'NvimTree' },
   },
   context_commentstring = {
     enable = true

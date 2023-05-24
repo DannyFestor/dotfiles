@@ -24,4 +24,6 @@
     footer = {},
   }
 - Additional Treesitter modules? Refactor seems cool
+  - Fix Treesitter PHP indentations... if installed, doesn't automatically tab/space correctly
 - Fix not automatically adding tabs in php
+- gS splitjoin splitting not working correctly

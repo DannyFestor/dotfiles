@@ -52,3 +52,7 @@ rm -rf $HOME/.local/bin/t
 # if [ !-d "$HOME/.oh-my-zsh" ]; then
 #     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # fi
+
+echo COPYING ideavim config
+rm -rf $HOME/.ideavimrc
+ln -s $DOTFILES/jetbrains/.ideavimrc $HOME/.ideavimrc
