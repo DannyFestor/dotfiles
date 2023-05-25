@@ -1,0 +1,15 @@
+{
+    "scan_apps": [],
+    "services": [
+        "mailhog",
+        "meilisearch",
+        "minio",
+        "mysql",
+        "postgresql@15",
+        "redis",
+	"mailpit"
+    ],
+    "presets": [],
+    "export": {}
+}
+

@@ -44,6 +44,7 @@ require('lspconfig').sqlls.setup({
 })
 
 -- Rust
+require('lspconfig').rls.setup({ capabilities = capabilities })
 require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
 
 -- Zig
