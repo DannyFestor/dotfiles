@@ -16,6 +16,11 @@ echo COPYING .zshrc
 rm -rf $HOME/.zshrc
 ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 
+# TMux
+echo COPYING tmux.conf
+rm -rf $HOME/.tmux.conf
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 
@@ -42,6 +47,17 @@ ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
 # echo COPYING .config/raycast
 # rm -rf $HOME/.config/raycast
 # ln -s $DOTFILES/raycast $HOME/.config/raycast
+#
+#
+# echo COPYING .config/yabai/yabairc Tiling Window Manager
+rm -rf $HOME/.config/yabai/yabairc
+mkdir -p $HOME/.config/yabai
+ln -s $DOTFILES/yabai/yabairc $HOME/.config/yabai/yabairc
+
+# echo COPYING .config/skhd/skhdrc Keyboard Shortcut Manager
+rm -rf $HOME/.config/skhd/skhdrc
+mkdir -p $HOME/.config/skhd
+ln -s $DOTFILES/skhd/skhdrc $HOME/.config/skhd/skhdrc
 
 echo COPYING scripts
 mkdir -p $HOME/.local/bin

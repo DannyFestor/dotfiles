@@ -1,4 +1,4 @@
--- Change leader key from \ to space
+-- Change leader k y from \ to space
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 

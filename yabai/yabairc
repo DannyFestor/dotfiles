@@ -1,0 +1,31 @@
+# bsp, stack or float
+yabai -m config layout bsp
+
+# when vertically, add new window right, when horizontally, add new window bottom
+yabai -m config window_placement second_child
+
+# padding between windows
+# TODO: look for good values
+yabai -m config top_padding 12
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+# mouse settings
+# move mouse to active window
+yabai -m config mouse_follows_focus on
+# modifier key for commands
+yabai -m config mouse_modifier alt
+# alt + left click + drag will move window
+yabai -m config mouse_action1 move
+# alt + right click + drag will resize window
+yabai -m config mouse_action2 resize
+# swap windows on move instead of stacking when dropped at center of another window
+yabai -m mouse_drop_action swap
+
+# Apps that yabai will ignore
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+# TODO: Add all apps where this is needed
