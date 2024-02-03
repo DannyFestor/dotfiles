@@ -14,9 +14,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="af-magic"
-ZSH_THEME="simple"
+# ZSH_THEME="simple"
 #ZSH_THEME="eastwood"
 #ZSH_THEME="gnzh"
+ZSH_THEME="amuse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -136,7 +137,7 @@ export PATH="$CARGO_HOME/bin:$PATH"
 export PATH="/Users/dannyfestor/.composer/vendor/bin:$PATH"
 
 # Laravel Valet
-alias valet_down="brew services stop postgresql@15 & brew services stop mysql & brew services stop mailpit & brew services stop redis & brew services stop minio & brew services stop meilisearch & valet stop"
+alias valet_down="brew services stop postgresql@15 & brew services stop mysql & brew services stop mailpit & brew services stop redis & brew services stop minio & brew services stop meilisearch & valet stop & valet stop dnsmasq"
 alias valet_up="brew services start postgresql@15 & brew services start mysql & brew services start mailpit & brew services start redis & brew services start minio & brew services start meilisearch & valet start"
 alias sail='bash vendor/bin/sail'
 
@@ -145,10 +146,12 @@ alias minio_folder="cd /opt/homebrew/var/minio/"
 alias cdci=/Users/dannyfestor/git/freelance/ci/
 
 # Laravel Log
+alias a="php artisan"
 alias clear_log="echo > ./storage/logs/laravel.log"
 # PHP Code 
 alias pint="./vendor/bin/pint"
-alias phpstan="./vendor/bin/phpstan analyze --xdebug"
+alias phpstan="./vendor/bin/phpstan analyze"
+# alias phpstan="./vendor/bin/phpstan analyze --xdebug"
 alias phpinsights="./vendor/bin/phpinsights"
 # Docker
 alias dcu="docker-compose up"
@@ -179,6 +182,33 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 alias nvm="asdf"
  . ~/.asdf/plugins/golang/set-env.zsh
+
+
+# Postgresql15
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+# Flutter
+# export PATH="/opt/homebrew/Caskroom/flutter/3.3.10/flutter/bin:$PATH"
+
+# Herd injected PHP binary.
+# export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
+# export PHP_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/":$PHP_INI_SCAN_DIR
+
+
+# Herd injected PHP 8.3 configuration.
+# export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
+
+
+# Herd injected PHP 8.2 configuration.
+# export HERD_PHP_82_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/82/"
+
+
+# Herd injected PHP 8.1 configuration.
+# export HERD_PHP_81_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/81/"
+
+
+# Herd injected PHP 8.0 configuration.
+# export HERD_PHP_80_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/80/"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

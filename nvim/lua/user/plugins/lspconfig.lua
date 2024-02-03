@@ -1,85 +1,89 @@
-require('mason').setup()
-require('mason-lspconfig').setup({ automatic_installation = true })
+-- require('mason').setup()
+-- require('mason-lspconfig').setup({ automatic_installation = true })
 
--- Update vims LSP capabilities with the installed autocomplete pluginls
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
--- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- -- Update vims LSP capabilities with the installed autocomplete pluginls
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- -- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- LSP configs: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
--- PHP
-require('lspconfig').intelephense.setup({ 
-  on_attach = on_attach,
-  capabilities = capabilities 
-})
+-- -- LSP configs: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+-- -- PHP
+-- -- put license file at $HOME/intelephense/licence.txt
+-- require('lspconfig').intelephense.setup({ 
+--   on_attach = on_attach,
+--   capabilities = capabilities 
+-- })
 
--- JavaScript, TypeScript, Vue
-require('lspconfig').volar.setup({
-  capabilities = capabilities,
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-})
+-- -- JavaScript, TypeScript, Vue
+-- require('lspconfig').volar.setup({
+--   capabilities = capabilities,
+--   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+-- })
 
--- TailwindCSS
-require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
+-- -- TailwindCSS
+-- require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 
--- GO
-require('lspconfig').gopls.setup({ capabilities = capabilities })
+-- -- GO
+-- require('lspconfig').gopls.setup({ capabilities = capabilities })
 
--- Dart
-require('lspconfig').dartls.setup({ capabilities = capabilities })
+-- -- Dart
+-- require('lspconfig').dartls.setup({ capabilities = capabilities })
 
--- JSON
-require('lspconfig').jsonls.setup({
-  capabilities = capabilities,
-  settings = {
-    json = {
-      schemas = require('schemastore').json.schemas(),
-    },
-  },
-})
+-- -- JSON
+-- require('lspconfig').jsonls.setup({
+--   capabilities = capabilities,
+--   settings = {
+--     json = {
+--       schemas = require('schemastore').json.schemas(),
+--     },
+--   },
+-- })
 
--- SQL
-require('lspconfig').sqlls.setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+-- -- SQL
+-- require('lspconfig').sqlls.setup({
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+-- })
 
--- Rust
-require('lspconfig').rls.setup({ capabilities = capabilities })
-require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
+-- -- Rust
+-- require('lspconfig').rls.setup({ capabilities = capabilities })
+-- require('lspconfig').rust_analyzer.setup({ capabilities = capabilities })
 
--- Zig
-require('lspconfig').zls.setup({ capabilities = capabilities })
+-- -- Zig
+-- require('lspconfig').zls.setup({ capabilities = capabilities })
 
--- Run external tools like ESLint, Automatic Formatting (prettier, gofmt, dart format)
-require('null-ls').setup({
-  sources = {
-    -- ESLint
-    require('null-ls').builtins.diagnostics.eslint_d.with({
-      condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
-      end,
-    }),
-    require('null-ls').builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
-    require('null-ls').builtins.formatting.eslint_d.with({
-      condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
-      end,
-    }),
+-- -- Java
+-- -- require('jdtls').java.setup({ capabilities = capabilities })
 
-    -- Prettier
-    require('null-ls').builtins.formatting.prettierd,
+-- -- Run external tools like ESLint, Automatic Formatting (prettier, gofmt, dart format)
+-- require('null-ls').setup({
+--   sources = {
+--     -- ESLint
+--     require('null-ls').builtins.diagnostics.eslint_d.with({
+--       condition = function(utils)
+--         return utils.root_has_file({ '.eslintrc.js' })
+--       end,
+--     }),
+--     require('null-ls').builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
+--     require('null-ls').builtins.formatting.eslint_d.with({
+--       condition = function(utils)
+--         return utils.root_has_file({ '.eslintrc.js' })
+--       end,
+--     }),
 
-    -- GO
-    require('null-ls').builtins.code_actions.gomodifytags,
-    require('null-ls').builtins.formatting.gofmt,
-    require('null-ls').builtins.formatting.goimports,
+--     -- Prettier
+--     require('null-ls').builtins.formatting.prettierd,
 
-    -- Dart Format
-    require('null-ls').builtins.formatting.dart_format,
-  },
-})
+--     -- GO
+--     require('null-ls').builtins.code_actions.gomodifytags,
+--     require('null-ls').builtins.formatting.gofmt,
+--     require('null-ls').builtins.formatting.goimports,
 
-require('mason-null-ls').setup({ automatic_installation = true })
+--     -- Dart Format
+--     require('null-ls').builtins.formatting.dart_format,
+--   },
+-- })
+
+-- require('mason-null-ls').setup({ automatic_installation = true })
 
 -- Keymaps
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')

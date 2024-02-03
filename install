@@ -50,11 +50,15 @@ ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
 #
 #
 # echo COPYING .config/yabai/yabairc Tiling Window Manager
+# brew install koekeishiya/formulae/yabai
+# yabai --start-service
 rm -rf $HOME/.config/yabai/yabairc
 mkdir -p $HOME/.config/yabai
 ln -s $DOTFILES/yabai/yabairc $HOME/.config/yabai/yabairc
 
 # echo COPYING .config/skhd/skhdrc Keyboard Shortcut Manager
+#  brew install koekeishiya/formulae/skhd
+#  skhd --start-service
 rm -rf $HOME/.config/skhd/skhdrc
 mkdir -p $HOME/.config/skhd
 ln -s $DOTFILES/skhd/skhdrc $HOME/.config/skhd/skhdrc

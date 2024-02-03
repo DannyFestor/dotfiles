@@ -1,6 +1,6 @@
 -- Change leader k y from \ to space
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- vim.g.mapleader = ' '
+-- vim.g.maplocalleader = ' '
 
 -- Syntax set(mode 'n' normal, pressed key, used key, expression flag)
 -- NORMAL MODE SETTINGS
