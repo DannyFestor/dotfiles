@@ -1,10 +1,5 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# Fig pre block. Keep at the top of this file.
-## If you come from bash you might have to change your $PATH.
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-# disable automatic CD
-unsetopt autocd
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -13,10 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="af-magic"
-# ZSH_THEME="simple"
-#ZSH_THEME="eastwood"
-#ZSH_THEME="gnzh"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="amuse"
 
 # Set list of themes to pick from when loading at random
@@ -80,19 +72,9 @@ ZSH_THEME="amuse"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-##	dotenv
-    macos
-    laravel
-    composer
-    npm
-    yarn
-    node
-    zsh-autosuggestions
-    zsh-history-substring-search
-    zsh-syntax-highlighting
+	git
+	asdf
 )
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=239'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,23 +104,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#fortune | cowsay | lolcat
-# neofetch --ascii "$(fortune | cowsay -W 30)"
+# Laravel Herd
+export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
 
-# GO
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/82/"
 
-# RUST
-export CARGO_HOME="$HOME/.cargo"
-export PATH="$CARGO_HOME/bin:$PATH"
+# Herd injected PHP 7.4 configuration.
+export HERD_PHP_74_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/74/"
 
-# Composer 
-export PATH="/Users/dannyfestor/.composer/vendor/bin:$PATH"
+# Herd injected PHP 8.0 configuration.
+export HERD_PHP_80_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/80/"
 
-# Laravel Valet
-alias valet_down="brew services stop postgresql@15 & brew services stop mysql & brew services stop mailpit & brew services stop redis & brew services stop minio & brew services stop meilisearch & valet stop & valet stop dnsmasq"
-alias valet_up="brew services start postgresql@15 & brew services start mysql & brew services start mailpit & brew services start redis & brew services start minio & brew services start meilisearch & valet start"
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/81/"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
+
 alias sail='bash vendor/bin/sail'
 
 # Minio
@@ -148,67 +131,34 @@ alias cdci=/Users/dannyfestor/git/freelance/ci/
 # Laravel Log
 alias a="php artisan"
 alias clear_log="echo > ./storage/logs/laravel.log"
-# PHP Code 
+
+# PHP Code
 alias pint="./vendor/bin/pint"
 alias phpstan="./vendor/bin/phpstan analyze"
+
 # alias phpstan="./vendor/bin/phpstan analyze --xdebug"
 alias phpinsights="./vendor/bin/phpinsights"
+
 # Docker
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
 
-# PYTHON pip install --user global scripts
-export PATH="/Users/dannyfestor/Library/Python/3.9/bin:$PATH"
-export PATH="/Users/dannyfestor/bin:$PATH"
-export PATH=$HOME/bin:~/.config/phpmon/bin:$PATH
-
-# Enable extended glob when executing files
-setopt extendedglob
-
-# JAVA
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-# custom scripts
-# export PATH="$HOME/.local/bin:$PATH"
-
-# CURL
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
-
-# ASDF node version manager
-. "$HOME/.asdf/asdf.sh"
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
-alias nvm="asdf"
- . ~/.asdf/plugins/golang/set-env.zsh
-
-
-# Postgresql15
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-
+# ASDF
+# Go
+. ~/.asdf/plugins/golang/set-env.zsh
+# Dart
+bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
 # Flutter
-# export PATH="/opt/homebrew/Caskroom/flutter/3.3.10/flutter/bin:$PATH"
+export FLUTTER_ROOT="$(asdf where flutter)"
+# Java
+. ~/.asdf/plugins/java/set-java-home.zsh
+# Ocaml / Opam
+eval $(opam env)
+# Zig ZLS
+export PATH=$PATH":/Users/dannyfestor/.zig/zls/zig-out/bin"
 
-# Herd injected PHP binary.
-# export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
-# export PHP_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/":$PHP_INI_SCAN_DIR
+# Dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT
+export PATH=$PATH:$DOTNET_ROOT/tools
 
-
-# Herd injected PHP 8.3 configuration.
-# export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP 8.2 configuration.
-# export HERD_PHP_82_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/82/"
-
-
-# Herd injected PHP 8.1 configuration.
-# export HERD_PHP_81_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/81/"
-
-
-# Herd injected PHP 8.0 configuration.
-# export HERD_PHP_80_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/80/"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
