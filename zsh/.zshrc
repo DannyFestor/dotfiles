@@ -105,22 +105,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Laravel Herd
-export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
-
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/82/"
-
-# Herd injected PHP 7.4 configuration.
-export HERD_PHP_74_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/74/"
-
-# Herd injected PHP 8.0 configuration.
-export HERD_PHP_80_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/80/"
-
-# Herd injected PHP 8.1 configuration.
-export HERD_PHP_81_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/81/"
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
+# export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
+#
+# # Herd injected PHP 8.2 configuration.
+# export HERD_PHP_82_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/82/"
+#
+# # Herd injected PHP 7.4 configuration.
+# export HERD_PHP_74_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/74/"
+#
+# # Herd injected PHP 8.0 configuration.
+# export HERD_PHP_80_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/80/"
+#
+# # Herd injected PHP 8.1 configuration.
+# export HERD_PHP_81_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/81/"
+#
+# # Herd injected PHP 8.3 configuration.
+# export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
 
 alias sail='bash vendor/bin/sail'
 
@@ -131,6 +131,9 @@ alias cdci=/Users/dannyfestor/git/freelance/ci/
 # Laravel Log
 alias a="php artisan"
 alias clear_log="echo > ./storage/logs/laravel.log"
+
+# Symfony
+export PATH="$HOME/.symfony5/bin:$PATH"
 
 # PHP Code
 alias pint="./vendor/bin/pint"
@@ -146,8 +149,10 @@ alias dcd="docker-compose down"
 # ASDF
 # Go
 . ~/.asdf/plugins/golang/set-env.zsh
+# export GOPATH=$HOME/go
+# export GOBIN=$HOME/go/bin
 # Dart
-bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
+# bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
 # Flutter
 export FLUTTER_ROOT="$(asdf where flutter)"
 # Java
@@ -162,3 +167,19 @@ export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT
 export PATH=$PATH:$DOTNET_ROOT/tools
 
+# NVim
+alias vim=nvim
+
+# Herd injected NVM configuration
+# export NVM_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# pnpm
+  # export PNPM_HOME="/Users/dannyfestor/Library/pnpm"
+  # case ":$PATH:" in
+  #   *":$PNPM_HOME:"*) ;;
+  #   *) export PATH="$PNPM_HOME:$PATH" ;;
+  # esac
+# pnpm end

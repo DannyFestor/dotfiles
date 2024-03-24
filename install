@@ -29,7 +29,8 @@ rm -rf $HOME/.gitconfig
 ln -s $DOTFILES/git/.gitconfig $HOME/.gitconfig
 mkdir -p $HOME/.config/git
 rm -rf $HOME/.config/git/.gitignore_global
-ln -s $DOTFILES/git/.gitignore_global
+ln -s $DOTFILES/git/.gitignore_global ~/.gitignore_global
+git config --global core.excludesFile ~/.gitignore_global
 
 echo COPYING .config/nvim
 rm -rf $HOME/.config/nvim
@@ -48,7 +49,10 @@ ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
 # rm -rf $HOME/.config/raycast
 # ln -s $DOTFILES/raycast $HOME/.config/raycast
 #
-#
+# echo COPYING .ocamlinit
+rm -rf $HOME/.ocamlinit
+ln -s $DOTFILES/ocaml/ocamlinit $HOME/.ocamlinit
+
 # echo COPYING .config/yabai/yabairc Tiling Window Manager
 # brew install koekeishiya/formulae/yabai
 # yabai --start-service
