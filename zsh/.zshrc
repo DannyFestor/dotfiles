@@ -122,6 +122,9 @@ source $ZSH/oh-my-zsh.sh
 # # Herd injected PHP 8.3 configuration.
 # export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
 
+# PHPMON
+export PATH="$PATH:$HOME/.config/phpmon/bin"
+
 alias sail='bash vendor/bin/sail'
 
 # Minio
@@ -151,6 +154,7 @@ alias dcd="docker-compose down"
 . ~/.asdf/plugins/golang/set-env.zsh
 # export GOPATH=$HOME/go
 # export GOBIN=$HOME/go/bin
+export PATH=$PATH":/Users/dannyfestor/.asdf/installs/golang/1.22.1/packages/bin"
 # Dart
 # bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
 # Flutter
