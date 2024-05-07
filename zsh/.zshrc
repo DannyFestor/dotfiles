@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -122,6 +122,9 @@ source $ZSH/oh-my-zsh.sh
 # # Herd injected PHP 8.3 configuration.
 # export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
 
+# MikTex / LaTeX
+export PATH="$PATH:$HOME/bin"
+
 # PHPMON
 export PATH="$PATH:$HOME/.config/phpmon/bin"
 
@@ -145,15 +148,21 @@ alias phpstan="./vendor/bin/phpstan analyze"
 # alias phpstan="./vendor/bin/phpstan analyze --xdebug"
 alias phpinsights="./vendor/bin/phpinsights"
 
+# PHP Composer versions
+alias composer74='php74 /opt/homebrew/bin/composer'
+alias composer80='php80 /opt/homebrew/bin/composer'
+alias composer81='php81 /opt/homebrew/bin/composer'
+alias composer82='php82 /opt/homebrew/bin/composer'
+
 # Docker
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
 
 # ASDF
 # Go
-. ~/.asdf/plugins/golang/set-env.zsh
-# export GOPATH=$HOME/go
-# export GOBIN=$HOME/go/bin
+# . ~/.asdf/plugins/golang/set-env.zsh
+export GOROOT=$(asdf where golang)/go
+export GOBIN=$(asdf where golang)/go/bin
 export PATH=$PATH":/Users/dannyfestor/.asdf/installs/golang/1.22.1/packages/bin"
 # Dart
 # bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
