@@ -25,6 +25,7 @@ require("lazy").setup({
 	require("user.plugins.treesitter"), -- syntax highlighting, navigate code (jump around class, function etc)
 	require("user.plugins.neotree"), -- file tree
 	require("user.plugins.copilot"), -- auto complete code
+	require("user.plugins.gopher"), -- additional go Commands: GoTagAdd json
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.

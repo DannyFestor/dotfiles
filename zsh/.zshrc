@@ -74,6 +74,7 @@ ZSH_THEME="amuse"
 plugins=(
 	git
 	asdf
+	fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -161,9 +162,11 @@ alias dcd="docker-compose down"
 # ASDF
 # Go
 # . ~/.asdf/plugins/golang/set-env.zsh
-export GOROOT=$(asdf where golang)/go
-export GOBIN=$(asdf where golang)/go/bin
-export PATH=$PATH":/Users/dannyfestor/.asdf/installs/golang/1.22.1/packages/bin"
+local go=$(asdf where golang)
+echo $go
+export GOROOT=$go/go
+export GOBIN=$go/go/bin
+export PATH=$PATH":$go/packages/bin"
 # Dart
 # bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
 # Flutter
