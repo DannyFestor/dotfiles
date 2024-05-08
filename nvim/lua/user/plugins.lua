@@ -10,22 +10,50 @@
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+	-- Detect tabstop and shiftwidth automatically
+	"tpope/vim-sleuth",
 
-	require("user.plugins.comments"), -- "gc" to comment visual regions/lines
-	require("user.plugins.gitsigns"), -- display git signs next to line number
-	require("user.plugins.which-key"), -- show keybindings
-	require("user.plugins.telescope"), -- fuzzy finder
-	require("user.plugins.lsp"), -- lsp
-	require("user.plugins.conform"), -- auto formatting
-	require("user.plugins.nvim-cmp"), -- auto complete code
-	require("user.plugins.colorscheme"), -- colorscheme
-	require("user.plugins.todo-comments"), -- highlight todos in comments
-	require("user.plugins.mini"), -- more movement commands
-	require("user.plugins.treesitter"), -- syntax highlighting, navigate code (jump around class, function etc)
-	require("user.plugins.neotree"), -- file tree
-	require("user.plugins.copilot"), -- auto complete code
-	require("user.plugins.gopher"), -- additional go Commands: GoTagAdd json
+	-- "gc" to comment visual regions/lines
+	require("user.plugins.comments"),
+
+	-- Adds git related signs to the gutter, as well as utilities for managing changes
+	require("user.plugins.gitsigns"),
+
+	-- Show Hotkey Information etc.
+	require("user.plugins.which-key"),
+
+	-- fuzzy finder
+	require("user.plugins.telescope"),
+
+	-- LSP Configuration & Plugins
+	require("user.plugins.lsp"),
+
+	-- Autoformat
+	require("user.plugins.conform"),
+
+	-- Autocompletion
+	require("user.plugins.nvim-cmp"),
+
+	-- Color Scheme
+	require("user.plugins.colorscheme"),
+
+	-- Highlight TODO, NOTE in comments
+	require("user.plugins.todo-comments"),
+
+	-- more movement commands
+	require("user.plugins.mini"),
+
+	-- syntax highlighting, navigate code (jump around class, function etc)
+	require("user.plugins.treesitter"),
+
+	-- file tree
+	require("user.plugins.neotree"),
+
+	-- auto complete code
+	require("user.plugins.copilot"),
+
+	-- additional go Commands: :GoTagAdd json, :GoIfErr and more
+	require("user.plugins.gopher"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.

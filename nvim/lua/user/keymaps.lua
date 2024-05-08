@@ -86,8 +86,3 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 
 -- Plugins
 -- Neotree
-vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "Neotr[E]e toggle" })
-
--- Gopher
-vim.keymap.set("n", "<leader>gsj", "<CMD>GoTagAdd json<CR>", { desc = "Add [G]o [S]truct [J]SON tags" })
-vim.keymap.set("n", "<leader>gi", "<CMD>GoIfErr<CR>", { desc = "Add [G]o [I]fErr Boilerplate" })

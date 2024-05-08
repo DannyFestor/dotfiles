@@ -23,13 +23,21 @@
 
 -- :GoIfErr - Generate if err
 
+local config = function(_, opts)
+	require("gopher").setup(opts)
+
+	-- Keymaps
+	vim.keymap.set("n", "<leader>gsj", "<CMD>GoTagAdd json<CR>", { desc = "Add [G]o [S]truct [J]SON tags" })
+	vim.keymap.set("n", "<leader>gi", "<CMD>GoIfErr<CR>", { desc = "Add [G]o [I]fErr Boilerplate" })
+end
+
+local build = function()
+	vim.cmd([[silent! GoInstallDeps]])
+end
+
 return {
 	"olexsmir/gopher.nvim",
 	ft = { "go" },
-	config = function(_, opts)
-		require("gopher").setup(opts)
-	end,
-	build = function()
-		vim.cmd([[silent! GoInstallDeps]])
-	end,
+	config = config,
+	build = build,
 }
