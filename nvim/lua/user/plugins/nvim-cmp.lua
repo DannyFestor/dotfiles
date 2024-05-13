@@ -66,16 +66,16 @@ local config = function() -- See `:help cmp`
 			{ name = "path" },
 		},
 
-		-- luasnip.add_snippets("lua", {
-		-- 	s("hello", {
-		-- 		t('print("hello '),
-		-- 		i(1),
-		-- 		t(' world")'),
-		-- 		i(2),
-		-- 		t(' world")'),
-		-- 		i(3),
-		-- 	}),
-		-- }),
+		luasnip.add_snippets("lua", {
+			s("hello", {
+				t('print("hello '),
+				i(1),
+				t(' world")'),
+				i(2),
+				t(' world")'),
+				i(3),
+			}),
+		}),
 	})
 end
 

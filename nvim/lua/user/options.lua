@@ -49,7 +49,6 @@ vim.opt.list = true -- enable the below listchars
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
 
---
 -- Create new split below/right of active tab
 -- Configure how new splits should be opened
 vim.opt.splitbelow = true

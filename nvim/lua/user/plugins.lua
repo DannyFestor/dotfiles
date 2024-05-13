@@ -40,7 +40,7 @@ require("lazy").setup({
 	-- Highlight TODO, NOTE in comments
 	require("user.plugins.todo-comments"),
 
-	-- more movement commands
+	-- more movement commands, better status line etc
 	require("user.plugins.mini"),
 
 	-- syntax highlighting, navigate code (jump around class, function etc)
@@ -54,6 +54,9 @@ require("lazy").setup({
 
 	-- additional go Commands: :GoTagAdd json, :GoIfErr and more
 	require("user.plugins.gopher"),
+
+	-- zen mode
+	require("user.plugins.zen-mode"),
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
 	--    This is the easiest way to modularize your config.

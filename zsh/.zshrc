@@ -163,7 +163,6 @@ alias dcd="docker-compose down"
 # Go
 # . ~/.asdf/plugins/golang/set-env.zsh
 local go=$(asdf where golang)
-echo $go
 export GOROOT=$go/go
 export GOBIN=$go/go/bin
 export PATH=$PATH":$go/packages/bin"
@@ -172,7 +171,13 @@ export PATH=$PATH":$go/packages/bin"
 # Flutter
 export FLUTTER_ROOT="$(asdf where flutter)"
 # Java
-. ~/.asdf/plugins/java/set-java-home.zsh
+# . ~/.asdf/plugins/java/set-java-home.zsh
+java_path="$(asdf which java)"
+if [[ -n "${java_path}" ]]; then
+  export JAVA_HOME
+  JAVA_HOME="$(dirname "$(dirname "${java_path:A}")")"
+  export JDK_HOME=${JAVA_HOME}
+fi
 # Ocaml / Opam
 eval $(opam env)
 # Zig ZLS
