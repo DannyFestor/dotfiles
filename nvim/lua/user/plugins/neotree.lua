@@ -15,9 +15,10 @@ local opts = {
 	},
 }
 
-local config = function()
-	vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "Neotr[E]e toggle" })
-end
+-- Defining a config somehow breaks the filtered item options...
+-- local config = function ()
+--   vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "Neotr[E]e toggle" })
+-- end
 
 local dependencies = {
 	"nvim-lua/plenary.nvim",
@@ -31,5 +32,5 @@ return { -- File tree
 	opts = opts,
 	branch = "v3.x",
 	dependencies = dependencies,
-	config = config,
+	-- config = config,
 }

@@ -2,9 +2,9 @@ local config = function() -- See `:help cmp`
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
 	luasnip.config.setup({})
-	local s = luasnip.snippet
-	local t = luasnip.text_node
-	local i = luasnip.insert_node
+	-- local s = luasnip.snippet
+	-- local t = luasnip.text_node
+	-- local i = luasnip.insert_node
 
 	cmp.setup({
 		snippet = {
@@ -66,16 +66,17 @@ local config = function() -- See `:help cmp`
 			{ name = "path" },
 		},
 
-		luasnip.add_snippets("lua", {
-			s("hello", {
-				t('print("hello '),
-				i(1),
-				t(' world")'),
-				i(2),
-				t(' world")'),
-				i(3),
-			}),
-		}),
+		-- luasnip.add_snippets("lua", {
+		-- 	s("hello", {
+		-- 		t('print("hello '),
+		-- 		i(1),
+		-- 		t(' world")'),
+		-- 		i(2),
+		-- 		t(' world")'),
+		-- 		i(3),
+		-- 	}),
+		-- }),
+		require("luasnip.loaders.from_snipmate").lazy_load(), -- loads snippets from ../../../snippets depending on file extension
 	})
 end
 

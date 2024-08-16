@@ -83,3 +83,13 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 -- vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 -- vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- TABS
+vim.keymap.set("n", "[t", ":tabprevious<CR>", { desc = "Go to previous [t]ab" })
+vim.keymap.set("n", "]t", ":tabprevious<CR>", { desc = "Go to next [t]ab" })
+
+-- Plugins
+-- Neotree - must be done here because otherwise Neotree will hide dotfiles...
+vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "Neotr[E]e toggle" })
+-- Zen mode
+vim.keymap.set("n", "<leader>z", "<CMD>ZenMode<CR>", { desc = "Toggle [Z]en mode" })

@@ -73,8 +73,9 @@ ZSH_THEME="amuse"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	asdf
+	# asdf
 	fzf-tab
+	zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -162,26 +163,26 @@ alias dcd="docker-compose down"
 # ASDF
 # Go
 # . ~/.asdf/plugins/golang/set-env.zsh
-local go=$(asdf where golang)
-export GOROOT=$go/go
-export GOBIN=$go/go/bin
-export PATH=$PATH":$go/packages/bin"
+# local go=$(asdf where golang)
+# export GOROOT=$go/go
+# export GOBIN=$go/go/bin
+# export PATH=$PATH":$go/packages/bin"
 # Dart
 # bash /Users/dannyfestor/.asdf/plugins/dart/tools/dart_version_watcher.sh
 # Flutter
-export FLUTTER_ROOT="$(asdf where flutter)"
+# export FLUTTER_ROOT="$(asdf where flutter)"
 # Java
 # . ~/.asdf/plugins/java/set-java-home.zsh
-java_path="$(asdf which java)"
-if [[ -n "${java_path}" ]]; then
-  export JAVA_HOME
-  JAVA_HOME="$(dirname "$(dirname "${java_path:A}")")"
-  export JDK_HOME=${JAVA_HOME}
-fi
+# java_path="$(asdf which java)"
+# if [[ -n "${java_path}" ]]; then
+#   export JAVA_HOME
+#   JAVA_HOME="$(dirname "$(dirname "${java_path:A}")")"
+#   export JDK_HOME=${JAVA_HOME}
+# fi
 # Ocaml / Opam
-eval $(opam env)
+# eval $(opam env)
 # Zig ZLS
-export PATH=$PATH":/Users/dannyfestor/.zig/zls/zig-out/bin"
+# export PATH=$PATH":/Users/dannyfestor/.zig/zls/zig-out/bin"
 
 # Dotnet
 export DOTNET_ROOT=$HOME/.dotnet
@@ -204,3 +205,40 @@ alias vim=nvim
   #   *) export PATH="$PNPM_HOME:$PATH" ;;
   # esac
 # pnpm end
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/84/"
+
+
+# GO
+export PATH="$HOME/go/bin:$PATH"
+
+# RUST
+. "$HOME/.cargo/env"
+
+# FLUTTER
+export PATH="/Users/dannyfestor/flutter/bin:$PATH"
+
+# OCAML
+export PATH="/Users/dannyfestor/.opam/bin:$PATH"
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/dannyfestor/.opam/opam-init/init.zsh' ]] || source '/Users/dannyfestor/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+
+# bun completions
+[ -s "/Users/dannyfestor/.bun/_bun" ] && source "/Users/dannyfestor/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# deno
+export DENO_INSTALL="/Users/dannyfestor/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

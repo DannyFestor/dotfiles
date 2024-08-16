@@ -45,7 +45,7 @@ vim.opt.smartcase = true -- but only when searching lower case
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 -- Control how vim renders invisible characters
-vim.opt.list = true -- enable the below listchars
+vim.opt.list = false -- enable the below listchars
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
 

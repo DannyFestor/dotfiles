@@ -35,16 +35,21 @@ git config --global core.excludesFile ~/.gitignore_global
 echo COPYING .config/nvim
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
-#
+
 echo COPYING .config/phpactor
 rm -rf $HOME/.config/phpactor
 ln -s $DOTFILES/phpactor $HOME/.config/phpactor
-#
+
 # echo COPYING .config/phpmon
 mkdir -p $HOME/.config/phpmon
 rm -rf $HOME/.config/phpmon/config.json
 ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
-#
+
+echo COPYING .config/alacritty/alacritty.toml
+rm -rf $HOME/.config/alacritty/
+mkdir -p $HOME/.config/alacritty
+ln -s $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritt.toml
+
 # echo COPYING .config/raycast
 # rm -rf $HOME/.config/raycast
 # ln -s $DOTFILES/raycast $HOME/.config/raycast

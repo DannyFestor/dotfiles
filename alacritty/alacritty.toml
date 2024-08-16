@@ -1,0 +1,44 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 0
+padding.y = 0
+dynamic_padding = true
+
+decorations = "Buttonless"
+
+opacity = 0.9
+blur = true
+
+option_as_alt = "Both"
+
+[font]
+normal.family = "JetBrainsMono Nerd Font Mono"
+size = 18
+
+# generate tokyo night color scheme for alacritty
+[colors.primary]
+background = "#222334"
+foreground = "#cad2f2"
+
+[colors.normal]
+black = "#1b1c29"
+red = "#ed7d81"
+green = "#cae697"
+yellow = "#f6c982"
+blue = "#8aa8f8"
+magenta = "#bb9af8"
+cyan = "#9bdef8"
+white = "#838ab4"
+
+[colors.bright]
+black = "#454970"
+red = "#ed7d81"
+green = "#cae697"
+yellow = "#f6c982"
+blue = "#8aa8f8"
+magenta = "#bb9af8"
+cyan = "#9bdef8"
+white = "#838ab4"
+
