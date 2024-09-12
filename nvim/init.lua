@@ -23,4 +23,9 @@ require("lazy").setup({
 	require("plugins.autocomplete"),
 	require("plugins.none-ls"),
 	require("plugins.gitsigns"),
+	require("plugins.alpha"),
+	require("plugins.fugitive"),
+	require("plugins.which-key"),
+	require("plugins.highlight-todo"),
+	require("plugins.show-colors"),
 })
