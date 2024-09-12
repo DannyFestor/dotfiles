@@ -13,5 +13,6 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    require 'plugins.neotree'
+    require 'plugins.neotree',
+    require 'plugins.colortheme'
 })
