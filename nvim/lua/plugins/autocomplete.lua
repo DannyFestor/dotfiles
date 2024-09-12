@@ -1,4 +1,3 @@
-
 local config = function() -- See `:help cmp`
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
@@ -6,35 +5,34 @@ local config = function() -- See `:help cmp`
 	-- local s = luasnip.snippet
 	-- local t = luasnip.text_node
 	-- local i = luasnip.insert_node
-    --
-    local kind_icons = {
-      Text = '󰉿',
-      Method = 'm',
-      Function = '󰊕',
-      Constructor = '',
-      Field = '',
-      Variable = '󰆧',
-      Class = '󰌗',
-      Interface = '',
-      Module = '',
-      Property = '',
-      Unit = '',
-      Value = '󰎠',
-      Enum = '',
-      Keyword = '󰌋',
-      Snippet = '',
-      Color = '󰏘',
-      File = '󰈙',
-      Reference = '',
-      Folder = '󰉋',
-      EnumMember = '',
-      Constant = '󰇽',
-      Struct = '',
-      Event = '',
-      Operator = '󰆕',
-      TypeParameter = '󰊄',
-
-    }
+	--
+	local kind_icons = {
+		Text = "󰉿",
+		Method = "m",
+		Function = "󰊕",
+		Constructor = "",
+		Field = "",
+		Variable = "󰆧",
+		Class = "󰌗",
+		Interface = "",
+		Module = "",
+		Property = "",
+		Unit = "",
+		Value = "󰎠",
+		Enum = "",
+		Keyword = "󰌋",
+		Snippet = "",
+		Color = "󰏘",
+		File = "󰈙",
+		Reference = "",
+		Folder = "󰉋",
+		EnumMember = "",
+		Constant = "󰇽",
+		Struct = "",
+		Event = "",
+		Operator = "󰆕",
+		TypeParameter = "󰊄",
+	}
 	cmp.setup({
 		snippet = {
 			expand = function(args)
@@ -94,19 +92,19 @@ local config = function() -- See `:help cmp`
 			{ name = "luasnip" },
 			{ name = "path" },
 		},
-formatting = {
-fields = { 'kind', 'abbr', 'menu' },
-format = function(entry, vim_item)
-vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-vim_item.menu = ({
-nvim_lsp = '[LSP]',
-luasnip = '[Snippet]',
-buffer = '[Buffer]',
-path = '[Path]',
-})[entry.source.name]
-return vim_item
-end,
-},
+		formatting = {
+			fields = { "kind", "abbr", "menu" },
+			format = function(entry, vim_item)
+				vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+				vim_item.menu = ({
+					nvim_lsp = "[LSP]",
+					luasnip = "[Snippet]",
+					buffer = "[Buffer]",
+					path = "[Path]",
+				})[entry.source.name]
+				return vim_item
+			end,
+		},
 
 		-- luasnip.add_snippets("lua", {
 		-- 	s("hello", {

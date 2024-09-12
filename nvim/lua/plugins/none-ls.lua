@@ -19,6 +19,8 @@ return {
 				"checkmake", -- linter for Makefiles
 				"ruff", -- Python linter and formatter
 				"pint", -- PHP linter and formatter
+                "gofmt", -- GO formatter
+                "goimports", -- Automatically organize imports
 			},
 			automatic_installation = true,
 		})
@@ -31,6 +33,9 @@ return {
 			formatting.terraform_fmt,
 			require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
 			require("none-ls.formatting.ruff_format"),
+			formatting.pint,
+            formatting.gofmt,
+            formatting.goimports,
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
