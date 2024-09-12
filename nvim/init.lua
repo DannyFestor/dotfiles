@@ -28,4 +28,6 @@ require("lazy").setup({
 	require("plugins.which-key"),
 	require("plugins.highlight-todo"),
 	require("plugins.show-colors"),
+	require("plugins.copilot"),
+	require("plugins.zen-mode"),
 })
