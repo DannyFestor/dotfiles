@@ -1,8 +1,0 @@
-snippet mw "Add middleware"
-    func ${1}(next http.Handler) http.Handler {
-        return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-            ${2}
-
-            next.ServeHTTP(w, r)
-        })
-    }
