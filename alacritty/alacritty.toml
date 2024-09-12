@@ -16,8 +16,8 @@ option_as_alt = "Both"
 [font]
 normal.family = "JetBrainsMono Nerd Font Mono"
 size = 18
-offset.x = 3  # letter spacing
-offset.y = 16 # line spacing
+offset.x = 2  # letter spacing
+offset.y = 12 # line spacing
 
 # generate tokyo night color scheme for alacritty
 [colors.primary]

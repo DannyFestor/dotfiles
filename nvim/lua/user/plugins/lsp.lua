@@ -118,13 +118,13 @@ local config = function() -- Brief aside: **What is LSP?**
 	--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 	local servers = {
 		-- clangd = {},
-		gopls = {
-			settings = {
-				gopls = {
-					-- usePlaceholders = true,
-				},
-			},
-		},
+		-- gopls = {
+		-- 	settings = {
+		-- 		gopls = {
+		-- 			-- usePlaceholders = true,
+		-- 		},
+		-- 	},
+		-- },
 		-- pyright = {},
 		rust_analyzer = {},
 		intelephense = {},

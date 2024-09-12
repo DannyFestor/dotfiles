@@ -124,6 +124,9 @@ export LANG=en_US.UTF-8
 # # Herd injected PHP 8.3 configuration.
 # export HERD_PHP_83_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/83/"
 
+# Herd injected PHP 8.4 configuration.
+# export HERD_PHP_84_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/84/"
+
 # MikTex / LaTeX
 export PATH="$PATH:$HOME/bin"
 
@@ -208,12 +211,9 @@ alias vim=nvim
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/84/"
-
-
 # GO
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 export PATH="$HOME/go/bin:$PATH"
 
 # RUST
@@ -223,7 +223,7 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="/Users/dannyfestor/flutter/bin:$PATH"
 
 # OCAML
-export PATH="/Users/dannyfestor/.opam/bin:$PATH"
+# export PATH="/Users/dannyfestor/.opam/bin:$PATH"
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
 #   - the correct directories to the PATH
@@ -236,9 +236,12 @@ export PATH="/Users/dannyfestor/.opam/bin:$PATH"
 [ -s "/Users/dannyfestor/.bun/_bun" ] && source "/Users/dannyfestor/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
 
 # deno
-export DENO_INSTALL="/Users/dannyfestor/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# export DENO_INSTALL="/Users/dannyfestor/.deno"
+# export PATH="$DENO_INSTALL/bin:$PATH"
+
+# MISE version manager - Mise is a tool to manage your shell environment.
+eval "$(/Users/dannyfestor/.local/bin/mise activate zsh)"
