@@ -1,4 +1,3 @@
-
 local config = function() -- Brief aside: **What is LSP?**
 	--
 	-- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -126,12 +125,12 @@ local config = function() -- Brief aside: **What is LSP?**
 				},
 			},
 		},
-        goimports = {},
+		goimports = {},
 		-- pyright = {},
 		rust_analyzer = {},
 		intelephense = {},
-        -- phpactor = {},
-        phpstan = {},
+		-- phpactor = {},
+		phpstan = {},
 		-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 		--
 		-- Some languages (like typescript) have entire language plugins that can be useful:
@@ -139,17 +138,17 @@ local config = function() -- Brief aside: **What is LSP?**
 		--
 		-- But for many setups, the LSP (`tsserver`) will work just fine
 		-- tsserver = {}, -- apparently renamed?
-        ts_ls = {},
-        html = { filetypes = { 'html', 'twig', 'hbs' } },
-        cssls = {},
-        tailwindcss = {},
-        dockerls = {},
-        sqlls = {},
-        terraformls = {},
-        jsonls = {},
-        yamlls = {},
-        prettier = {},
-        prettierd = {},
+		ts_ls = {},
+		html = { filetypes = { "html", "twig", "hbs" } },
+		cssls = {},
+		tailwindcss = {},
+		dockerls = {},
+		sqlls = {},
+		terraformls = {},
+		jsonls = {},
+		yamlls = {},
+		prettier = {},
+		prettierd = {},
 
 		lua_ls = {
 			-- cmd = {...},
@@ -160,16 +159,16 @@ local config = function() -- Brief aside: **What is LSP?**
 					completion = {
 						callSnippet = "Replace",
 					},
-                    runtime = { version = 'LuaJIT' },
-                    workspace = {
-                      checkThirdParty = false,
-                      library = {
-                        '${3rd}/luv/library',
-                        unpack(vim.api.nvim_get_runtime_file('', true)),
-                      },
-                    },
-                    diagnostics = { disable = { 'missing-fields' } },
-                    format = { enable = false, },
+					runtime = { version = "LuaJIT" },
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							"${3rd}/luv/library",
+							unpack(vim.api.nvim_get_runtime_file("", true)),
+						},
+					},
+					diagnostics = { disable = { "missing-fields" } },
+					format = { enable = false },
 					-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 					-- diagnostics = { disable = { 'missing-fields' } },
 				},
@@ -206,8 +205,8 @@ local config = function() -- Brief aside: **What is LSP?**
 		},
 	})
 
-    require("lspconfig").dartls.setup({})
-    require("lspconfig").gleam.setup({})
+	require("lspconfig").dartls.setup({})
+	require("lspconfig").gleam.setup({})
 end
 
 local dependencies = {
