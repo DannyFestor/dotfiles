@@ -100,15 +100,17 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 -- vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- TABS
-vim.keymap.set("n", "[t", ":tabprevious<CR>", { desc = "Go to previous [t]ab" })
-vim.keymap.set("n", "]t", ":tabprevious<CR>", { desc = "Go to next [t]ab" })
-vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab
-vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
+-- vim.keymap.set("n", "[t", ":tabprevious<CR>", { desc = "Go to previous [t]ab" })
+-- vim.keymap.set("n", "]t", ":tabprevious<CR>", { desc = "Go to next [t]ab" })
+-- vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab
+-- vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close current tab
 -- BUFFERS
 -- vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 -- vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
--- vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
--- vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+vim.keymap.set('n', '[t', ':bnext<CR>', opts)
+vim.keymap.set('n', ']t', ':bprevious<CR>', opts)
+vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
+vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Toggle line wrapping
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
