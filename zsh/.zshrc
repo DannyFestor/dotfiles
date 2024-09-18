@@ -107,7 +107,7 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Laravel Herd
-# export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
+export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
 #
 # # Herd injected PHP 8.2 configuration.
 # export HERD_PHP_82_INI_SCAN_DIR="/Users/dannyfestor/Library/Application Support/Herd/config/php/82/"
@@ -245,3 +245,4 @@ export PATH="/Users/dannyfestor/flutter/bin:$PATH"
 
 # MISE version manager - Mise is a tool to manage your shell environment.
 eval "$(/Users/dannyfestor/.local/bin/mise activate zsh)"
+
