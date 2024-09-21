@@ -45,6 +45,12 @@ mkdir -p $HOME/.config/phpmon
 rm -rf $HOME/.config/phpmon/config.json
 ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
 
+# Wezterm Terminal Emulator
+echo COPYING .wezterm.lua
+rm -rf $HOME/.wezterm.lua
+ln -s $DOTFILES/wezterm/wezterm.lua $HOME/.wezterm.lua
+
+# Alactritty Terminal Emulator
 echo COPYING .config/alacritty/alacritty.toml
 rm -rf $HOME/.config/alacritty/
 mkdir -p $HOME/.config/alacritty
