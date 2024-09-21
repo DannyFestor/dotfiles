@@ -22,12 +22,13 @@ config.window_padding = {
 }
 
 -- Tab bar
-config.enable_tab_bar = false
--- config.window_frame = {
--- 	font_size = 18.0,
---
--- 	-- font = wezterm.font("JetBrainsMono Nerd Font Mono"),
--- 	font = wezterm.font("AnonymicePro Nerd Font Propo"),
--- }
+config.enable_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.window_frame = {
+	font_size = 18.0,
+
+	-- font = wezterm.font("JetBrainsMono Nerd Font Mono"),
+	font = wezterm.font("AnonymicePro Nerd Font Propo"),
+}
 
 return config
