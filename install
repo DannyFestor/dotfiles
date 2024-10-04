@@ -14,7 +14,7 @@ DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 # ZSH
 echo COPYING .zshrc
 rm -rf $HOME/.zshrc
-ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
+ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 # TMux
 echo COPYING tmux.conf
@@ -91,6 +91,10 @@ fi
 echo COPYING ideavim config
 rm -rf $HOME/.ideavimrc
 ln -s $DOTFILES/jetbrains/.ideavimrc $HOME/.ideavimrc
+
+# installing fzf-tab
+mkdir -p $HOME/.config/
+git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/
 
 source ~/.zshrc
 $DOTFILES/asdf/install

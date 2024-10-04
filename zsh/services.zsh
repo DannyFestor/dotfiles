@@ -1,3 +1,13 @@
+# autocomplete
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# fzf-tab # needs fzftab plugin
+source $HOME/.config/fzf-tab/fzf-tab.plugin.zsh
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# fzf
+# [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+source <(fzf --zsh)
 
 # Laravel Herd
 # export PATH="/Users/dannyfestor/Library/Application Support/Herd/bin/":$PATH
@@ -32,3 +42,5 @@ export PATH="$PATH:$HOME/bin"
 # PHPMON
 export PATH="$PATH:$HOME/.config/phpmon/bin"
 
+# SQLite3
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"

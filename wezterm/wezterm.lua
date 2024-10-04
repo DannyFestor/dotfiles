@@ -2,6 +2,10 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+-- left option key as alt key
+config.send_composed_key_when_left_alt_is_pressed = true
+-- config.send_composed_key_when_right_alt_is_pressed = true -- no right option key on japanese keyboards ;(
+
 -- color scheme
 config.color_scheme = "tokyonight_moon"
 
@@ -29,6 +33,13 @@ config.window_frame = {
 
 	-- font = wezterm.font("JetBrainsMono Nerd Font Mono"),
 	font = wezterm.font("AnonymicePro Nerd Font Propo"),
+}
+
+config.keys = {
+	-- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
+	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
+	-- Make Option-Right equivalent to Alt-f; forward-word
+	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
 }
 
 return config

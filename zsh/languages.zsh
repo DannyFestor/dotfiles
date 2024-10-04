@@ -15,7 +15,8 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Dotnet
-export DOTNET_ROOT=$HOME/.dotnet
+# export DOTNET_ROOT=$HOME/.dotnet
+export DOTNET_ROOT=/Users/dannyfestor/.local/share/mise/installs/dotnet/
 export PATH=$PATH:$DOTNET_ROOT
 export PATH=$PATH:$DOTNET_ROOT/tools
 

@@ -1,3 +1,15 @@
+# git
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gcm="git commit -m"
+alias gaa="git add ."
+
+# alias ll="eza -l --header --icons=always --absolute=follow -T -L=1"
+alias ls="eza"
+alias ll="eza -l --header --icons=always"
+alias ll2="eza -l --header --icons=always -T -L=2"
+alias la="eza -la --header --icons=always"
+
 # NVim
 alias vim=nvim
 
