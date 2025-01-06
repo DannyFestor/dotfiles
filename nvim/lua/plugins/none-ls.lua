@@ -19,6 +19,7 @@ return {
 				"checkmake", -- linter for Makefiles
 				"ruff", -- Python linter and formatter
 				"pint", -- PHP linter and formatter
+				"php-cs-fixer", -- PHP formatter
 				"gofmt", -- GO formatter
 				"goimports", -- Automatically organize imports
 			},

@@ -31,3 +31,9 @@ require("lazy").setup({
 	require("plugins.copilot"),
 	require("plugins.zen-mode"),
 })
+
+vim.filetype.add({
+	pattern = {
+		[".*%.blade%.php"] = "blade",
+	},
+})
