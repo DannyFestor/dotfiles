@@ -19,8 +19,8 @@ return {
 				"checkmake", -- linter for Makefiles
 				"ruff", -- Python linter and formatter
 				"pint", -- PHP linter and formatter
-                "gofmt", -- GO formatter
-                "goimports", -- Automatically organize imports
+				"gofmt", -- GO formatter
+				"goimports", -- Automatically organize imports
 			},
 			automatic_installation = true,
 		})
@@ -34,8 +34,9 @@ return {
 			require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
 			require("none-ls.formatting.ruff_format"),
 			formatting.pint,
-            formatting.gofmt,
-            formatting.goimports,
+			formatting.gofmt,
+			formatting.goimports,
+			formatting.ols,
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

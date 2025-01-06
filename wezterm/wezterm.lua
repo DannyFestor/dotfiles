@@ -10,9 +10,10 @@ config.send_composed_key_when_left_alt_is_pressed = true
 config.color_scheme = "tokyonight_moon"
 
 -- font
--- config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
-config.font = wezterm.font("AnonymicePro Nerd Font Propo")
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+-- config.font = wezterm.font("AnonymicePro Nerd Font Propo", { weight = "Bold" })
 config.font_size = 20.0
+
 config.line_height = 1.8
 
 -- window
@@ -24,6 +25,7 @@ config.window_padding = {
 	top = 3,
 	bottom = 3,
 }
+config.window_decorations = "RESIZE" -- DEFAULT: "TITLE | RESIZE" -- hides the title bar
 
 -- Tab bar
 config.enable_tab_bar = true

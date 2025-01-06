@@ -1,0 +1,190 @@
+{
+    /**
+    * Better Defaults
+    **/
+    "editor.copyWithSyntaxHighlighting": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.emptySelectionClipboard": false,
+    "workbench.editor.enablePreview": false,
+    "window.newWindowDimensions": "inherit",
+    // "editor.multiCursorModifier": "ctrlCmd",
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.renderSideBySide": false,
+    "editor.snippetSuggestions": "top",
+    "editor.detectIndentation": false,
+    "window.nativeFullScreen": false,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+
+    /**
+    * Hide Everything
+    */
+    "workbench.activityBar.location": "hidden",
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": false,
+    "workbench.editor.showTabs": "none",
+    "editor.guides.indentation": false,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
+
+    /**
+    * Silence The Noise
+    */
+    "breadcrumbs.enabled": false,
+    "scm.diffDecorations": "none",
+    "editor.hover.enabled": true,
+    "editor.matchBrackets": "near",
+    "workbench.tips.enabled": false,
+    "editor.colorDecorators": true,
+    "git.decorations.enabled": true,
+    "workbench.startupEditor": "none",
+    "editor.lightbulb.enabled": "off",
+    "editor.selectionHighlight": true,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "all",
+    "editor.occurrencesHighlight": "singleFile",
+    "problems.decorations.enabled": true,
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    /**
+    * Typography
+    **/
+    "workbench.colorTheme": "Tokyo Night Moon",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 18, // "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 40, // "editor.lineHeight": 45,
+    "editor.suggestFontSize": 15,
+    "editor.suggestLineHeight": 28,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.lineHeight": 1.7,
+
+    /**
+    * Find
+    **/
+    "search.useIgnoreFiles": false,
+    "search.exclude": {
+        // Hide everything in /vendor, except the "laravel" and "livewire" folder.
+        "**/vendor/{[^l],?[^ai]}*": true,
+        // Hide everything in /public, except "index.php"
+        "**/public/{[^i],?[^n]}*": true,
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/_ide_helper.php": true,
+        "**/composer.lock": true,
+        "**/package-lock.json": true,
+        "storage": true,
+        ".phpunit.result.cache": true
+    },
+
+    /**
+    * Vim Mode
+    **/
+    // "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    // "vim.insertModeKeyBindings": [
+    //     {
+    //         "before": ["j", "j"],
+    //         "after": ["<Esc>"]
+    //     }
+    // ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // {
+        //     "before": ["<leader>", "d"],
+        //     "after": ["d", "d"]
+        // },
+        {
+            "before": ["<esc>"],
+            "commands": [":nohl"]
+        },
+        // {
+        //     "before": ["K"],
+        //     "commands": ["lineBreakInsert"],
+        //     "silent": true
+        // }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+
+    // To improve performance"
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+
+    // Language settings etc
+    "redhat.telemetry.enabled": false,
+    "zig.path": "",
+    "zig.zls.path": "",
+    "zig.initialSetupDone": true,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "blade.format.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[blade]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "git.confirmSync": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "gopls": {},
+    "github.copilot.editor.enableAutoCompletions": true,
+    "dart.flutterSdkPath": "/Users/dannyfestor/flutter",
+    "editor.inlayHints.padding": true,
+    "typescript.inlayHints.parameterNames.enabled": "literals",
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.customTitleBarVisibility": "windowed",
+    "window.titleBarStyle": "custom",
+
+}
