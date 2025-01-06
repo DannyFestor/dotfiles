@@ -56,6 +56,12 @@ rm -rf $HOME/.config/alacritty/
 mkdir -p $HOME/.config/alacritty
 ln -s $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritt.toml
 
+# Ghostty Terminal Emulator
+echo COPYING .config/ghostty/config
+rm -rf $HOME/.config/ghostty/config
+mkdir -p $HOME/.config/ghostty
+ln -s $DOTFILES/ghostty/config $HOME/.config/ghostty/config
+
 # echo COPYING .config/raycast
 # rm -rf $HOME/.config/raycast
 # ln -s $DOTFILES/raycast $HOME/.config/raycast
