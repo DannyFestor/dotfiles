@@ -5,3 +5,4 @@ adjust-cursor-height = 40%
 background = #25283F
 background-opacity = 0.95
 background-blur-radius = 20
+keybind = global:cmd+grave_accent=toggle_quick_terminal
