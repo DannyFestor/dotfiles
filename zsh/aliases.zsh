@@ -3,6 +3,7 @@ alias gco="git checkout"
 alias gcb="git checkout -b"
 alias gcm="git commit -m"
 alias gaa="git add ."
+alias wip="git add . && git commit -m 'WIP'"
 
 # alias ll="eza -l --header --icons=always --absolute=follow -T -L=1"
 alias ls="eza"
