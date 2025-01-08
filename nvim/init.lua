@@ -33,4 +33,5 @@ require("lazy").setup({
 	require("plugins.show-colors"), -- Show Colors in CSS
 	require("plugins.copilot"), -- Github Copilot
 	require("plugins.zen-mode"), -- Zen Mode for Distraction Free Writing
+	require("plugins.outline"), -- Code Outline
 })
