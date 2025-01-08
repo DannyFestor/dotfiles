@@ -35,6 +35,7 @@ return { -- Highlight, edit, and navigate code
 			"markdown_inline",
 			"bash",
 			"zig",
+			"odin",
 		},
 		-- Autoinstall languages that are not installed
 		auto_install = true,

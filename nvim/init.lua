@@ -13,26 +13,26 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	require("plugins.neotree"),
-	require("plugins.colortheme"),
-	require("plugins.bufferline"),
-	require("plugins.lualine"),
-	require("plugins.treesitter"),
-	require("plugins.telescope"),
-	require("plugins.lsp"),
-	require("plugins.autocomplete"),
+	require("plugins.neotree"), -- File Explorer
+	require("plugins.colortheme"), -- Color Theme
+	require("plugins.bufferline"), -- Buffer Line Theming
+	require("plugins.lualine"), -- Status Line
+	require("plugins.treesitter"), -- Syntax Highlighting
+	require("plugins.telescope"), -- Fuzzy Finder
+	require("plugins.autocomplete"), -- Auto Completion Popup
+	require("plugins.lsp"), -- Language Server Protocol
 	-- require("plugins.none-ls"), -- Auto Format
 	require("plugins.conform"), -- Auto Format
 	require("plugins.nvim-lint"), -- Linters
 	require("plugins.neotest"), -- Testing
-	require("plugins.gitsigns"),
-	require("plugins.alpha"),
-	require("plugins.fugitive"),
-	require("plugins.which-key"),
-	require("plugins.highlight-todo"),
-	require("plugins.show-colors"),
-	require("plugins.copilot"),
-	require("plugins.zen-mode"),
+	require("plugins.gitsigns"), -- Show Git Indicators
+	require("plugins.alpha"), -- Startup Dashboard
+	require("plugins.fugitive"), -- Git Integration Shortcuts etc
+	require("plugins.which-key"), -- Keymap Popup
+	require("plugins.highlight-todo"), -- Highlight TODOs
+	require("plugins.show-colors"), -- Show Colors in CSS
+	require("plugins.copilot"), -- Github Copilot
+	require("plugins.zen-mode"), -- Zen Mode for Distraction Free Writing
 })
 
 vim.filetype.add({
