@@ -185,12 +185,14 @@ local config = function() -- Brief aside: **What is LSP?**
 		-- Lua
 		"lua_ls", -- Used to format Lua code
 		"stylua", -- Used to format Lua code
+		-- "luacheck", -- Lua Linter -- throws error atm
 
 		-- PHP
 		"intelephense", -- PHP language server
 		"php-cs-fixer", -- PHP formatter
 		"pint", -- PHP formatter
 		"phpstan", -- PHP linter
+		"phpcs", -- PHP linter
 
 		-- Go
 		"gopls", -- Go language server
