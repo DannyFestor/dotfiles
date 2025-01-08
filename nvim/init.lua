@@ -34,9 +34,3 @@ require("lazy").setup({
 	require("plugins.copilot"), -- Github Copilot
 	require("plugins.zen-mode"), -- Zen Mode for Distraction Free Writing
 })
-
-vim.filetype.add({
-	pattern = {
-		[".*%.blade%.php"] = "blade",
-	},
-})

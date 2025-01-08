@@ -11,10 +11,26 @@ local config = function()
 	require("neotest").setup({
 		-- ...,
 		adapters = {
-			require("neotest-pest"),
-			require("neotest-phpunit")({
-				filter_dirs = { "vendor" },
+			require("neotest-pest")({
+				ignore_dirs = { "vendor", "node_modules" },
+				root_ignore_files = { "phpunit-only.tests" },
+				test_file_suffixes = { "Test.php", "_test.php", "PestTest.php" },
+				sail_enabled = function()
+					return false
+				end,
+				sail_executable = "vendor/bin/sail",
+				sail_project_path = "/var/www/html",
+				pest_cmd = "vendor/bin/pest",
+				parallel = 16,
+				compact = false,
+				-- results_path = function() "/some/accessible/path" end,
 			}),
+
+			require("neotest-phpunit")({
+				filter_dirs = { "vendor", "node_modules" },
+				root_ignore_files = { "tests/Pest.php" }, -- When test is installed ignore project
+			}),
+
 			require("neotest-go"),
 		},
 	})
