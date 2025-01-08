@@ -1,0 +1,67 @@
+# if err return err
+snippet err "if err return err"
+    if err != nil {
+        return err
+    }
+    ${0}
+
+# if err return fmt.Errorf
+snippet errwr "Error handling with fmt.Errorf"
+	if err != nil {
+		return fmt.Errorf("${1}: %w", err)
+	}
+    ${0}
+
+# add a middleware
+snippet mw "add a middleware"
+    func ${1:Middleware}(next http.Handler) http.Handler {
+        return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+            ${2}
+            next.ServeHTTP(w, r)
+        })
+    }
+    ${0}
+
+# check if value is in map
+snippet inmap "check if value is in map"
+    if _, ok := ${1:map}[${2:key}]; !ok {
+        ${3:/* handle missing key :/}
+    }
+    ${0}
+
+# add a test
+snippet test "add a test"
+    func Test${1:Name}(t *testing.T) {
+        ${2}
+    }
+    ${0}
+
+# add a test with a dataset
+snippet testdata "add a test with a dataset"
+    func Test${1:Name}(t *testing.T) {
+        ${2:/* setup */}
+
+        tests := []struct {
+            ${3:name string}
+        }{
+            ${4:{"name"\},}
+        }
+
+        for _, tt := range tests {
+            t.Run(tt.name, func(t *testing.T) {
+                ${5:name := "name" // retrieve name from function or api
+                if "name" != tt.name {
+                    t.Errorf("want %s; got %s, tt.name, name", tt.name, name)
+                \}}
+            })
+        }
+    }
+
+# recover from panic
+snippet rec "recover from panic"
+    defer func() {
+        if r := recover(); r != nil {
+            ${1:log.Printf("recovered from panic: %v", r)}
+        }
+    }()
+    ${0}
