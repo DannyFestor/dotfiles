@@ -1,3 +1,17 @@
+---@param bufnr integer
+---@param ... string
+---@return string
+local function first(bufnr, ...)
+	local conform = require("conform")
+	for i = 1, select("#", ...) do
+		local formatter = select(i, ...)
+		if conform.get_formatter_info(formatter, bufnr).available then
+			return formatter
+		end
+	end
+	return select(1, ...)
+end
+
 return { -- File tree
 	"stevearc/conform.nvim", -- opts = opts,
 	event = { "BufWritePre" },
@@ -18,8 +32,12 @@ return { -- File tree
 		-- Define your formatters
 		formatters_by_ft = {
 			lua = { "stylua" },
-			php = { "pint", "php-cs-fixer" },
-			javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
+			php = function(bufnr)
+				return { first(bufnr, "pint", "php-cs-fixer") }
+			end,
+			javascript = function(bufnr)
+				return { first(bufnr, "biome", "prettierd", "prettier"), stop_after_first = true }
+			end,
 			go = { "gofmt", "goimports" },
 		},
 		-- Set default options

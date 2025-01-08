@@ -2,20 +2,20 @@
 local opts = { noremap = true, silent = true }
 
 -- Change leader k y from \ to space
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Save file
-vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
+vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
 
 -- delete single character without copying into register
-vim.keymap.set('n', 'x', '"_x', opts)
+vim.keymap.set("n", "x", '"_x', opts)
 -- Keep last yanked when pasting
-vim.keymap.set('v', 'p', '"_dP', opts)
+vim.keymap.set("v", "p", '"_dP', opts)
 
 -- Vertical scroll and center
-vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
-vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 
 -- Syntax set(mode 'n' normal, pressed key, used key, expression flag)
 -- NORMAL MODE SETTINGS
@@ -107,13 +107,13 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 -- BUFFERS
 -- vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 -- vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set('n', '[t', ':bnext<CR>', opts)
-vim.keymap.set('n', ']t', ':bprevious<CR>', opts)
-vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts) -- close buffer
-vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+vim.keymap.set("n", "[t", ":bnext<CR>", opts)
+vim.keymap.set("n", "]t", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<leader>x", ":Bdelete!<CR>", opts) -- close buffer
+vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 
 -- Toggle line wrapping
-vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
+vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
 
 -- Plugins
 -- Neotree - must be done here because otherwise Neotree will hide dotfiles...

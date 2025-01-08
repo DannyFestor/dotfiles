@@ -1,5 +1,5 @@
 return { -- File tree
-	"mfussenegger/nvim-lint", -- opts = opts,
+	"mfussenegger/nvim-lint",
 	optional = true,
 	opts = {
 		-- Linters
