@@ -118,13 +118,7 @@ local config = function() -- Brief aside: **What is LSP?**
 	--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 	local servers = {
 		-- clangd = {},
-		gopls = {
-			settings = {
-				gopls = {
-					-- usePlaceholders = true,
-				},
-			},
-		},
+		gopls = {},
 		goimports = {},
 		-- pyright = {},
 		rust_analyzer = {},
@@ -188,7 +182,56 @@ local config = function() -- Brief aside: **What is LSP?**
 	-- for you, so that they are available from within Neovim.
 	local ensure_installed = vim.tbl_keys(servers or {})
 	vim.list_extend(ensure_installed, {
+		-- Lua
+		"lua_ls", -- Used to format Lua code
 		"stylua", -- Used to format Lua code
+
+		-- PHP
+		"intelephense", -- PHP language server
+		"php-cs-fixer", -- PHP formatter
+		"pint", -- PHP formatter
+		"phpstan", -- PHP linter
+
+		-- Go
+		"gopls", -- Go language server
+		"goimports", -- Go imports formatter
+		-- "gomodifytags", -- Go struct tag generator
+
+		-- Rust
+		"rust-analyzer", -- Rust language server
+
+		-- Odin
+		"ols", -- Odin language server
+
+		-- Zig
+		"zls", -- Zig language server
+
+		-- Java
+		"jdtls", -- Java language server
+
+		-- Ocaml
+		"ocamllsp", -- Ocaml language server
+
+		-- Web
+		"html", -- HTML language server
+		"cssls", -- CSS language server
+		"tailwindcss", -- TailwindCSS language server
+
+		-- JavaScript
+		"eslint_d", -- JavaScript linter
+		"ts_ls", -- TypeScript language server
+		"biome", -- JavaScript formatter and linter
+		"prettierd", -- JavaScript formatter
+		"prettier", -- JavaScript formatter
+		"volar", -- Vue language server
+		"svelte", -- Svelte language server
+
+		-- Misc
+		"dockerls", -- Docker language server
+		"sqlls", -- SQL language server
+		"terraformls", -- Terraform language server
+		"jsonls", -- JSON language server
+		"yamlls", -- YAML language server
 	})
 	require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

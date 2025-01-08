@@ -21,7 +21,8 @@ require("lazy").setup({
 	require("plugins.telescope"),
 	require("plugins.lsp"),
 	require("plugins.autocomplete"),
-	require("plugins.none-ls"),
+	-- require("plugins.none-ls"), -- Auto Format
+	require("plugins.conform"), -- Auto Format
 	require("plugins.gitsigns"),
 	require("plugins.alpha"),
 	require("plugins.fugitive"),
