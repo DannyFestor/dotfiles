@@ -1,6 +1,7 @@
 # declare strict types
 snippet dst "declare(strict_types=1)"
 	declare(strict_types=${1:1});
+
 # class ...
 snippet class "define a new class"
 	class ${1}
@@ -11,64 +12,82 @@ snippet class "define a new class"
 			${0}
 		}
 	}
+
 # interface
 snippet interface "define a new interface"
     interface ${1}
     {
         ${2}
     }
+    
 # trait
 snippet trait "define a new trait"
     trait ${1}
     {
         ${2}
     }
+
 # invoke
 snippet inv "add __invoke method"
     public function __invoke(${1}): ${2:void}
     {
-        ${0}
+        ${3}
     }
+    ${0}
 
 # public function
 snippet pubf "add public function"
     public function ${1}(${2}): ${3:void}
     {
-        ${0}
+        ${4}
     }
+    ${0}
 
 # public static function
 snippet pubsf "add public static function"
     public static function ${1}(${2}): ${3:void}
     {
-        ${0}
+        ${4}
     }
+    ${0}
 
 # protected function
 snippet prof "add protected function"
     protected function ${1}(${2}): ${3:void}
     {
-        ${0}
+        ${4}
     }
+    ${0}
 
 # protected static function
 snippet prosf "add protected static function"
     protected static function ${1}(${2}): ${3:void}
     {
-        ${0}
+        ${4}
     }
+    ${0}
 
 # private function
 snippet prif "add private function"
     private function ${1}(${2}): ${3:void}
     {
-        ${0}
+        ${4}
     }
+    ${0}
 
 # private static function
 snippet prisf "add private static function"
     private static function ${1}(${2}): ${3:void}
     {
-        ${0}
+        ${4}
     }
+    ${0}
 
+# PHPUnit Test
+snippet putest "PHPUnit Test"
+    public function test_${1}(): void
+    {
+        ${2:\$this->assertTrue(true);}
+    }
+    ${0}
+ 
