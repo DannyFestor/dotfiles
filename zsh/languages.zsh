@@ -1,3 +1,5 @@
+echo "Loading languages.zsh"
+
 # PHP
 # Symfony
 export PATH="$HOME/.symfony5/bin:$PATH"
@@ -32,6 +34,9 @@ export PATH="/Users/dannyfestor/flutter/bin:$PATH"
 # deno
 # export DENO_INSTALL="/Users/dannyfestor/.deno"
 # export PATH="$DENO_INSTALL/bin:$PATH"
-#
+
+# npm
+export PATH="$HOME/.npm/bin:$PATH"
+
 # Odin
 export PATH="$PATH:$HOME/.languages/Odin"

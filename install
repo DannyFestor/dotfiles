@@ -45,6 +45,11 @@ mkdir -p $HOME/.config/phpmon
 rm -rf $HOME/.config/phpmon/config.json
 ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
 
+# NPM configuration for global packages
+echo COPYING .npmrc
+rm -rf $HOME/.npmrc
+ln -s $DOTFILES/npm/npmrc $HOME/.npmrc
+
 # Wezterm Terminal Emulator
 echo COPYING .wezterm.lua
 rm -rf $HOME/.wezterm.lua
