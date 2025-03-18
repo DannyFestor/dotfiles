@@ -32,3 +32,6 @@ export PATH="/Users/dannyfestor/flutter/bin:$PATH"
 # deno
 # export DENO_INSTALL="/Users/dannyfestor/.deno"
 # export PATH="$DENO_INSTALL/bin:$PATH"
+#
+# Odin
+export PATH="$PATH:$HOME/.languages/Odin"
