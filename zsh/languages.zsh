@@ -1,5 +1,3 @@
-echo "Loading languages.zsh"
-
 # PHP
 # Symfony
 export PATH="$HOME/.symfony5/bin:$PATH"

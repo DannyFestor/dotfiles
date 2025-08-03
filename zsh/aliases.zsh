@@ -19,6 +19,7 @@ alias pint="./vendor/bin/pint"
 alias phpstan="./vendor/bin/phpstan analyze"
 # alias phpstan="./vendor/bin/phpstan analyze --xdebug" # WITH xdebux
 alias phpinsights="./vendor/bin/phpinsights"
+alias rector="./vendor/bin/rector"
 
 # Laravel
 alias a="php artisan"

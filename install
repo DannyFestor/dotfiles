@@ -33,8 +33,14 @@ ln -s $DOTFILES/git/.gitignore_global ~/.gitignore_global
 git config --global core.excludesFile ~/.gitignore_global
 
 echo COPYING .config/nvim
+mkdir -p $HOME/.config/nvim
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/nvim $HOME/.config/nvim
+
+echo COPYING .config/zed/settings.json
+mkdir -p $HOME/.config/zed
+rm -rf $HOME/.config/zed/settings.json
+ln -s $HOME/git/dotfiles/zed/settings.json $HOME/.config/zed/settings.json
 
 echo COPYING .config/phpactor
 rm -rf $HOME/.config/phpactor

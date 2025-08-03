@@ -1,0 +1,112 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "agent": {
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
+    "dock": "left",
+    "model_parameters": [],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1"
+    }
+  },
+  "show_edit_predictions": true,
+  "terminal": {
+    "dock": "bottom"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "icon_theme": "Catppuccin Macchiato",
+  "features": {
+    // "inline_completion_provider": "none"
+    // "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
+  },
+  // "tab_bar": { "show": false },
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
+  "theme": "Catppuccin Macchiato",
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
+  // "buffer_line_height": "comfortable",
+  "buffer_line_height": {
+    "custom": 2
+  },
+  "current_line_highlight": "all",
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  // Disable biome for every project. To enable, add "language_servers": [ "biome", "..." ] to project settings
+  "language_servers": ["!biome", "..."],
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
+  },
+  "languages": {
+    "Go": {
+      "show_edit_predictions": true,
+      "code_actions_on_format": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+      }
+    },
+    "PHP": {
+      "language_servers": ["intelephense", "!phpactor", "..."]
+    }
+  },
+  "context_servers": {
+    "mcp-server-github": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "github_personal_access_token": "SECRET"
+      }
+    },
+    "mcp-server-brave-search": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "brave_api_key": "SECRET"
+      }
+    },
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "default_minimum_tokens": "10000"
+      }
+    },
+    "postgres-context-server": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "database_url": "postgresql://postgres:postgres@127.0.0.1/dearfutureme?statusColor=F8F7BD&env=local&name=Dear%20Future%20Me&tLSMode=0&usePrivateKey=false&safeModeLevel=0&advancedSafeModeLevel=0&driverVersion=0&lazyload=false"
+      }
+    },
+    "Context7": {
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "settings": {}
+    }
+  }
+}

@@ -34,4 +34,5 @@ require("lazy").setup({
 	require("plugins.copilot"), -- Github Copilot
 	require("plugins.zen-mode"), -- Zen Mode for Distraction Free Writing
 	require("plugins.outline"), -- Code Outline
+	require("plugins.codecompanion"), -- Code Companion, uses Copilot by default, no further setup needed
 })

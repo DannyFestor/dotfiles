@@ -120,3 +120,8 @@ vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
 -- vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>", { desc = "Neotr[E]e toggle" })
 -- Zen mode
 -- vim.keymap.set("n", "<leader>z", "<CMD>ZenMode<CR>", { desc = "Toggle [Z]en mode" })
+
+-- CodeCompanion
+vim.keymap.set({ "n", "v" }, "<leader>cc", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<leader>ci", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })

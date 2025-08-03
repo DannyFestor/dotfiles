@@ -212,7 +212,7 @@ local config = function() -- Brief aside: **What is LSP?**
 		"jdtls", -- Java language server
 
 		-- Ocaml
-		"ocamllsp", -- Ocaml language server
+		-- "ocamllsp", -- Ocaml language server
 
 		-- Web
 		"html", -- HTML language server
@@ -225,7 +225,7 @@ local config = function() -- Brief aside: **What is LSP?**
 		"biome", -- JavaScript formatter and linter
 		"prettierd", -- JavaScript formatter
 		"prettier", -- JavaScript formatter
-		"volar", -- Vue language server
+		-- "volar", -- Vue language server
 		"svelte", -- Svelte language server
 
 		-- Misc

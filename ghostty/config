@@ -2,6 +2,6 @@ font-family = "JetBrainsMonoNL NFM Medium"
 font-size = 20
 adjust-cell-height = 40%
 adjust-cursor-height = 40%
-background = #25283F
 background-opacity = 0.95
 background-blur-radius = 20
+theme = dark:catppuccin-macchiato,light:catppuccin-latte
