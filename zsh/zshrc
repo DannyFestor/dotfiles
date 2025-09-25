@@ -16,6 +16,14 @@ eval "$(starship init zsh)"
 
 export LANG=en_US.UTF-8
 
+export SAVEHIST=10000 # Number of history entries to save
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicates first
+setopt HIST_IGNORE_DUPS # Do not store duplicate commands
+setopt HIST_IGNORE_SPACE # Do not store commands starting with a space
+setopt HIST_SAVE_NO_DUPS # Do not save duplicate commands to the history file
+
+export HOMEBREW_DOWNLOAD_CONCURRENCY=auto # Set Homebrew download concurrency to auto
+
 [ -f "$HOME/git/dotfiles/zsh/aliases.zsh" ] && source "$HOME/git/dotfiles/zsh/aliases.zsh"
 [ -f "$HOME/git/dotfiles/zsh/services.zsh" ] && source "$HOME/git/dotfiles/zsh/services.zsh"
 [ -f "$HOME/git/dotfiles/zsh/languages.zsh" ] && source "$HOME/git/dotfiles/zsh/languages.zsh"

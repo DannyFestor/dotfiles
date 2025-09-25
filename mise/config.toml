@@ -14,6 +14,10 @@ go = "latest"
 zig = "latest"
 pnpm = "latest"
 yarn = "latest"
-atlas = "latest"
+atlas = "0.36"
 biome = "latest"
-odin = "dev-2025-07"
+odin = "dev-2025-09"
+"go:github.com/air-verse/air" = "latest"
+
+[settings]
+experimental = true

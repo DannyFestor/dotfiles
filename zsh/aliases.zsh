@@ -11,8 +11,15 @@ alias ll="eza -l --header --icons=always"
 alias ll2="eza -l --header --icons=always -T -L=2"
 alias la="eza -la --header --icons=always"
 
-# NVim
+# VIM > NVim
 alias vim=nvim
+
+# CAT > BAT
+alias cat="bat --color=always"
+# alias cat="bat --style=plain --color=always --paging=never"
+
+# CD -> Zoxide
+alias cd="z"
 
 # PHP Code
 alias pint="./vendor/bin/pint"
