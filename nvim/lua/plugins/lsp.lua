@@ -250,9 +250,9 @@ local config = function() -- Brief aside: **What is LSP?**
 		},
 	})
 
-	require("lspconfig").dartls.setup({})
-	require("lspconfig").gleam.setup({})
-	require("lspconfig").ols.setup({})
+	vim.lsp.config("dartls", {})
+	vim.lsp.config("gleam", {})
+	vim.lsp.config("ols", {})
 end
 
 local dependencies = {
