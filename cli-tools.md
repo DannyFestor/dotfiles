@@ -52,6 +52,15 @@
 - posting - A powerful HTTP client that lives in your terminal. (like postman, insomnia but CLI)
 - harlequin - The SQL IDE for Your Terminal
 - serpl - search and replace keywords in an entire folder
+- grex - a tool to generate regular expressions from user-provided test cases - `grex "foo bar" "baz qux"` -> `foo bar|baz qux` | --digits makes all numbers generic | -r handle repeated values ( \d\d -> \d+ )
+- asciiquarium - display animated ASCII art in your terminal
+- cbonsai - a bonsai tree that grows in your terminal
+- jrnl - a simple command line journal application | `jrnl "My first entry"` to add an entry | `jrnl` to write entry | `jrnl --search keyword` to search entries
+
+## Curls
+- curl https://wttr.in/YourCity - weather information
+- curl https://ipinfo.io - get your public IP information
+- 
 
 ## Services
 - caddy - a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go
