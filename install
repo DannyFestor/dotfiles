@@ -82,10 +82,14 @@ rm -rf $HOME/.ocamlinit
 ln -s $DOTFILES/ocaml/ocamlinit $HOME/.ocamlinit
 
 # Newsboat RSS Reader
-echo COPYING .newsboat/urls
+echo COPYING .newsboat/urls .newsboat/config .newsboat/dark
 rm -rf $HOME/.newsboat/urls
+rm -rf $HOME/.newsboat/config
+rm -rf $HOME/.newsboat/dark
 mkdir -p $HOME/.newsboat
 ln -s $DOTFILES/newsboat/urls $HOME/.newsboat/urls
+ln -s $DOTFILES/newsboat/config $HOME/.newsboat/config
+ln -s $DOTFILES/newsboat/dark $HOME/.newsboat/dark
 
 # echo COPYING .config/yabai/yabairc Tiling Window Manager
 # brew install koekeishiya/formulae/yabai

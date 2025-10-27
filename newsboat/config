@@ -1,0 +1,11 @@
+# config
+browser "open '/Applications/Zen Browser.app' %u"
+
+# vim style navigation
+bind k everywhere up
+bind j everywhere down
+bind <C-d> everywhere pagedown
+bind <C-u> everywhere pageup
+
+# color scheme
+include ~/.newsboat/dark
