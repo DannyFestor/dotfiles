@@ -16,7 +16,7 @@ pnpm = "latest"
 yarn = "latest"
 atlas = "0.36"
 biome = "latest"
-odin = "dev-2025-10"
+odin = "dev-2025-11"
 "go:github.com/air-verse/air" = "latest"
 "go:github.com/golang-migrate/migrate/v4/cmd/migrate" = { version = "latest", tags = "postgres mysql sqlite3" }
 "go:github.com/pressly/goose/v3/cmd/goose" = "latest"
