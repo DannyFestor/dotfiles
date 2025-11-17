@@ -36,6 +36,9 @@ rm -rf $HOME/.gitconfig
 rm -rf $HOME/.config/git
 stow --target=$HOME git
 git config --global core.excludesFile $HOME/.config/git/.gitignore_global
+# configuring diff-so-fancy to be used by git
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RF"
+git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 # Ghostty Terminal Emulator
 echo COPYING .config/ghostty/config
@@ -117,10 +120,6 @@ ln -s $DOTFILES/jetbrains/.ideavimrc $HOME/.ideavimrc
 # installing fzf-tab
 mkdir -p $HOME/.config/
 git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/
-
-# configuring diff-so-fancy to be used by git
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RF"
-git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 source ~/.zshrc
 $DOTFILES/asdf/install
