@@ -1,3 +1,56 @@
+local ensureInstalledLSPs = {
+	-- Lua
+	"lua_ls",
+	"stylua",
+	-- PHP
+	"intelephense", -- PHP language server
+	"php-cs-fixer", -- PHP formatter
+	"pint", -- PHP formatter
+	"phpstan", -- PHP linter
+	"phpcs", -- PHP linter
+
+	-- Go
+	"gopls", -- Go language server
+	"goimports", -- Go imports formatter
+	"gomodifytags", -- Go struct tag generator
+
+	-- Rust
+	"rust-analyzer", -- Rust language server
+
+	-- Odin
+	"ols", -- Odin language server
+
+	-- Zig
+	"zls", -- Zig language server
+
+	-- Java
+	-- "jdtls", -- Java language server
+
+	-- Ocaml
+	-- "ocamllsp", -- Ocaml language server
+
+	-- Web
+	"html", -- HTML language server
+	"cssls", -- CSS language server
+	"tailwindcss", -- TailwindCSS language server
+
+	-- JavaScript
+	"eslint_d", -- JavaScript linter
+	"ts_ls", -- TypeScript language server
+	"biome", -- JavaScript formatter and linter
+	"prettierd", -- JavaScript formatter
+	"prettier", -- JavaScript formatter
+	"vue_ls", -- Vue language server
+	"svelte", -- Svelte language server
+
+	-- Misc
+	"dockerls", -- Docker language server
+	"sqlls", -- SQL language server
+	"terraformls", -- Terraform language server
+	"jsonls", -- JSON language server
+	"yamlls", -- YAML language server
+}
+
 local config = function() -- Brief aside: **What is LSP?**
 	--
 	-- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -132,7 +185,26 @@ local config = function() -- Brief aside: **What is LSP?**
 		--
 		-- But for many setups, the LSP (`tsserver`) will work just fine
 		-- tsserver = {}, -- apparently renamed?
-		ts_ls = {},
+		ts_ls = {
+			filetypes = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+				"vue",
+			},
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+						languages = { "javascript", "typescript", "vue" },
+					},
+				},
+			},
+		},
 		html = { filetypes = { "html", "twig", "hbs" } },
 		cssls = {},
 		tailwindcss = {},
@@ -181,60 +253,7 @@ local config = function() -- Brief aside: **What is LSP?**
 	-- You can add other tools here that you want Mason to install
 	-- for you, so that they are available from within Neovim.
 	local ensure_installed = vim.tbl_keys(servers or {})
-	vim.list_extend(ensure_installed, {
-		-- Lua
-		"lua_ls", -- Used to format Lua code
-		"stylua", -- Used to format Lua code
-		-- "luacheck", -- Lua Linter -- throws error atm
-
-		-- PHP
-		"intelephense", -- PHP language server
-		"php-cs-fixer", -- PHP formatter
-		"pint", -- PHP formatter
-		"phpstan", -- PHP linter
-		"phpcs", -- PHP linter
-
-		-- Go
-		"gopls", -- Go language server
-		"goimports", -- Go imports formatter
-		-- "gomodifytags", -- Go struct tag generator
-
-		-- Rust
-		"rust-analyzer", -- Rust language server
-
-		-- Odin
-		"ols", -- Odin language server
-
-		-- Zig
-		"zls", -- Zig language server
-
-		-- Java
-		"jdtls", -- Java language server
-
-		-- Ocaml
-		-- "ocamllsp", -- Ocaml language server
-
-		-- Web
-		"html", -- HTML language server
-		"cssls", -- CSS language server
-		"tailwindcss", -- TailwindCSS language server
-
-		-- JavaScript
-		"eslint_d", -- JavaScript linter
-		"ts_ls", -- TypeScript language server
-		"biome", -- JavaScript formatter and linter
-		"prettierd", -- JavaScript formatter
-		"prettier", -- JavaScript formatter
-		-- "volar", -- Vue language server
-		"svelte", -- Svelte language server
-
-		-- Misc
-		"dockerls", -- Docker language server
-		"sqlls", -- SQL language server
-		"terraformls", -- Terraform language server
-		"jsonls", -- JSON language server
-		"yamlls", -- YAML language server
-	})
+	vim.list_extend(ensure_installed, ensureInstalledLSPs)
 	require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 	require("mason-lspconfig").setup({

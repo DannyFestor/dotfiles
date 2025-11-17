@@ -9,13 +9,13 @@ alias wip="git add . && git commit -m 'WIP'"
 alias ls="eza"
 alias ll="eza -l --header --icons=always"
 alias ll2="eza -l --header --icons=always -T -L=2"
-alias la="eza -la --header --icons=always"
+alias la="eza -la --header --icons=always --git"
 
 # VIM > NVim
 alias vim=nvim
 
 # CAT > BAT
-alias cat="bat --color=always"
+# alias cat="bat --color=always"
 # alias cat="bat --style=plain --color=always --paging=never"
 
 # CD -> Zoxide

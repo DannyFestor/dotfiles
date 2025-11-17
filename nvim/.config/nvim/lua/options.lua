@@ -7,14 +7,14 @@
 --  See `:help vim.keymap.set()`
 
 -- space/tab options
-vim.opt.shiftwidth = 4 -- number of spaces inserted for each indentation (default: 8)
-vim.opt.tabstop = 4 -- insert n spaces for a tab (default: 8)
-vim.opt.softtabstop = 4 -- number of spaces that a tab counts for while performing editing operations (default: 0)
-vim.opt.expandtab = true -- spaces instead of tabstop
+vim.opt.shiftwidth = 4     -- number of spaces inserted for each indentation (default: 8)
+vim.opt.tabstop = 4        -- insert n spaces for a tab (default: 8)
+vim.opt.softtabstop = 4    -- number of spaces that a tab counts for while performing editing operations (default: 0)
+vim.opt.expandtab = true   -- spaces instead of tabstop
 vim.opt.smartindent = true -- automatic spaces in if statements etc
 -- vim.opt.autoindent = true -- Copy indent from current line when starting new one (default: true)
 
-vim.opt.wrap = false -- wrap long lines
+vim.opt.wrap = false     -- wrap long lines
 vim.opt.linebreak = true -- Companion to wrap, don't split words (default: false)
 
 -- line numbers
@@ -29,7 +29,8 @@ vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 8
 
 -- command mode (:) autocomplete behaviour change (don't autocomplete first match, so no need to delete)
-vim.opt.wildmode = "longest:full,full" -- complete the longest common match, and allow tabbing the results to fully complete them
+vim.opt.wildmode =
+"longest:full,full"                      -- complete the longest common match, and allow tabbing the results to fully complete them
 vim.opt.completeopt = 'menuone,noselect' -- was: "menuone,longest,preview" -- also show menu when only one item
 
 -- show full path and filename in window/tmux information
@@ -45,13 +46,13 @@ vim.opt.termguicolors = true
 vim.opt.spell = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true -- ignore case
-vim.opt.smartcase = true -- but only when searching lower case
+vim.opt.smartcase = true  -- but only when searching lower case
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 -- Control how vim renders invisible characters
-vim.opt.list = false -- enable the below listchars
+vim.opt.list = false                    -- enable the below listchars
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.fillchars:append({ eob = " " }) -- remove the ~ from end of buffer
 

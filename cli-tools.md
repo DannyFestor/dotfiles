@@ -2,11 +2,12 @@
 
 ## CLI and TUI
 
+- stow - a symlink farm manager > usage `stow --target=$HOME nvim` to symlink neovim config files to home directory
 - atuin - a next-generation shell history in SQLite with search and sync
 - tlrc (tldr) - a rust implementation of the tldr command line client
 - tmux - terminal multiplexer
 - neovim - a hyperextensible Vim-based text editor
-- fzf - a command-line fuzzy finder
+- fzf - a command-line fuzzy finder > usage `fzf` to start fuzzy finder | `cat file.txt \| fzf` to fuzzy search in file
 - eza - a modern replacement for ls
 - zoxide - a smarter cd command
 - fd - a simple, fast and user-friendly alternative to find
@@ -16,7 +17,9 @@
 - lazydocker - a simple terminal UI for docker commands
 - btop - a graphical and efficient alternative to htop
 - ffmpeg - a complete, cross-platform solution to record, convert and stream audio and video
+  - usage: `ffmpeg -i input.mp4 -vcodec libx264 -crf 20 output.mp4` to compress video file
 - youtube-dl - a command-line program to download videos from YouTube.com and a few
+  - usage: `youtube-dl <video_url>` to download video
 - jq - a lightweight and flexible command-line JSON processor
 - wget - a network utility to retrieve files from the web
 - curl - a command-line tool for transferring data with URL syntax
@@ -31,13 +34,16 @@
 - fastfetch - a fast system information tool
 - gemini-cli - a command line client for Google Gemini LLM
 - jpegoptim - a utility to optimize/compress JPEG files
+  - usage: `jpegoptim --strip-all image.jpg` to remove all metadata from an image, `jpegoptim --max=80 image.jpg` to compress image to max 80% quality
 - optipng - a PNG optimizer that recompresses image files to a smaller size, without losing any information
+  - usage: `optipng -o7 image.png` to optimize PNG image, `optipng -strip all image.png` to remove all metadata from an image
 - mise - a tool to manage multiple installations of programming languages and tools
 - openapi-generator - a tool that can generate API client libraries, server stubs, documentation and configuration automatically given an OpenAPI Spec
 - redocly-cli - a CLI tool for OpenAPI/Swagger definitions
 - starship - a minimal, blazing-fast, and infinitely customizable prompt for any shell
-- diff-so-fancy - a tool that makes git diffs human-readable
+- diff-so-fancy - a tool that makes git diffs human-readable | usage: `git diff --color | diff-so-fancy`
 - exiftool - a platform-independent Perl library plus a command-line application for reading, writing and editing meta information in a wide variety of files
+  - use `exiftool -all= image.jpg` to remove all metadata from an image
 - ranger - a console file manager with VI key bindings
 - superfile (`$ spf`)- a simple and fast file manager for the terminal
 - scc - a very fast and accurate code counter
