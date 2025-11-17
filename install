@@ -11,6 +11,8 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
+mkdir -p $HOME/.config
+
 # ZSH
 echo COPYING .zshrc
 rm -rf $HOME/.zshrc
@@ -18,8 +20,13 @@ ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 # TMux
 echo COPYING tmux.conf
-rm -rf $HOME/.tmux.conf
-ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+rm -rf $HOME/.config/tmux
+stow --target=$HOME/.config tmux
+
+# Neovim
+echo COPYING .config/nvim
+rm -rf $HOME/.config/nvim
+stow --target=$HOME/.config nvim
 
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
@@ -31,11 +38,6 @@ mkdir -p $HOME/.config/git
 rm -rf $HOME/.config/git/.gitignore_global
 ln -s $DOTFILES/git/.gitignore_global ~/.gitignore_global
 git config --global core.excludesFile ~/.gitignore_global
-
-echo COPYING .config/nvim
-mkdir -p $HOME/.config/nvim
-rm -rf $HOME/.config/nvim
-ln -s $DOTFILES/nvim $HOME/.config/nvim
 
 echo COPYING .config/zed/settings.json
 mkdir -p $HOME/.config/zed
