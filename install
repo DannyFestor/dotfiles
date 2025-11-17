@@ -42,6 +42,11 @@ echo COPYING .config/ghostty/config
 rm -rf $HOME/.config/ghostty
 stow --target=$HOME ghostty
 
+# Newsboat RSS Reader
+echo COPYING .newsboat/urls .newsboat/config .newsboat/dark
+rm -rf $HOME/.newsboat
+stow --target=$HOME newsboat
+
 ### To Stow
 
 # ASDF
@@ -77,23 +82,9 @@ rm -rf $HOME/.config/alacritty/
 mkdir -p $HOME/.config/alacritty
 ln -s $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritt.toml
 
-# echo COPYING .config/raycast
-# rm -rf $HOME/.config/raycast
-# ln -s $DOTFILES/raycast $HOME/.config/raycast
-#
 # echo COPYING .ocamlinit
 rm -rf $HOME/.ocamlinit
 ln -s $DOTFILES/ocaml/ocamlinit $HOME/.ocamlinit
-
-# Newsboat RSS Reader
-echo COPYING .newsboat/urls .newsboat/config .newsboat/dark
-rm -rf $HOME/.newsboat/urls
-rm -rf $HOME/.newsboat/config
-rm -rf $HOME/.newsboat/dark
-mkdir -p $HOME/.newsboat
-ln -s $DOTFILES/newsboat/urls $HOME/.newsboat/urls
-ln -s $DOTFILES/newsboat/config $HOME/.newsboat/config
-ln -s $DOTFILES/newsboat/dark $HOME/.newsboat/dark
 
 # echo COPYING .config/yabai/yabairc Tiling Window Manager
 # brew install koekeishiya/formulae/yabai
