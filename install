@@ -55,24 +55,12 @@ echo COPYING .newsboat/urls .newsboat/config .newsboat/dark
 rm -rf $HOME/.newsboat
 stow --target=$HOME newsboat
 
+# Zed Editor Settings
+echo COPYING .config/zed/
+rm -rf $HOME/.config/zed
+stow --target=$HOME zed
+
 ### To Stow
-
-# ASDF
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
-
-echo COPYING .config/zed/settings.json
-mkdir -p $HOME/.config/zed
-rm -rf $HOME/.config/zed/settings.json
-ln -s $HOME/git/dotfiles/zed/settings.json $HOME/.config/zed/settings.json
-
-echo COPYING .config/phpactor
-rm -rf $HOME/.config/phpactor
-ln -s $DOTFILES/phpactor $HOME/.config/phpactor
-
-# echo COPYING .config/phpmon
-mkdir -p $HOME/.config/phpmon
-rm -rf $HOME/.config/phpmon/config.json
-ln -s $DOTFILES/phpmon/config.json $HOME/.config/phpmon/config.json
 
 # NPM configuration for global packages
 echo COPYING .npmrc
