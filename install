@@ -18,15 +18,23 @@ echo COPYING .zshrc
 rm -rf $HOME/.zshrc
 ln -s $DOTFILES/zsh/zshrc $HOME/.zshrc
 
+### Stow finished
 # TMux
 echo COPYING tmux.conf
 rm -rf $HOME/.config/tmux
-stow --target=$HOME/.config tmux
+stow --target=$HOME tmux
 
 # Neovim
 echo COPYING .config/nvim
 rm -rf $HOME/.config/nvim
-stow --target=$HOME/.config nvim
+stow --target=$HOME nvim
+
+# Starship
+echo COPYING .config/starship.toml
+rm -rf $HOME/.config/starship.toml
+stow --target=$HOME starship
+
+### To Stow
 
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
