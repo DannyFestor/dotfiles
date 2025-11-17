@@ -45,6 +45,11 @@ echo COPYING .config/ghostty/config
 rm -rf $HOME/.config/ghostty
 stow --target=$HOME ghostty
 
+# Mise
+echo COPYING .config/mise
+rm -rf $HOME/.config/mise
+stow --target=$HOME mise
+
 # Newsboat RSS Reader
 echo COPYING .newsboat/urls .newsboat/config .newsboat/dark
 rm -rf $HOME/.newsboat
@@ -88,20 +93,6 @@ ln -s $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritt.toml
 # echo COPYING .ocamlinit
 rm -rf $HOME/.ocamlinit
 ln -s $DOTFILES/ocaml/ocamlinit $HOME/.ocamlinit
-
-# echo COPYING .config/yabai/yabairc Tiling Window Manager
-# brew install koekeishiya/formulae/yabai
-# yabai --start-service
-rm -rf $HOME/.config/yabai/yabairc
-mkdir -p $HOME/.config/yabai
-ln -s $DOTFILES/yabai/yabairc $HOME/.config/yabai/yabairc
-
-# echo COPYING .config/skhd/skhdrc Keyboard Shortcut Manager
-#  brew install koekeishiya/formulae/skhd
-#  skhd --start-service
-rm -rf $HOME/.config/skhd/skhdrc
-mkdir -p $HOME/.config/skhd
-ln -s $DOTFILES/skhd/skhdrc $HOME/.config/skhd/skhdrc
 
 echo COPYING scripts
 mkdir -p $HOME/.local/bin
