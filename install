@@ -60,12 +60,12 @@ echo COPYING .config/zed/
 rm -rf $HOME/.config/zed
 stow --target=$HOME zed
 
-### To Stow
-
 # NPM configuration for global packages
 echo COPYING .npmrc
 rm -rf $HOME/.npmrc
-ln -s $DOTFILES/npm/npmrc $HOME/.npmrc
+stow --target=$HOME npm
+
+### To Stow
 
 # Wezterm Terminal Emulator
 echo COPYING .wezterm.lua
@@ -101,4 +101,3 @@ mkdir -p $HOME/.config/
 git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/
 
 source ~/.zshrc
-$DOTFILES/asdf/install
