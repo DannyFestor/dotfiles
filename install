@@ -45,6 +45,11 @@ echo COPYING .config/ghostty/config
 rm -rf $HOME/.config/ghostty
 stow --target=$HOME ghostty
 
+# Wezterm Terminal Emulator
+echo COPYING .wezterm.lua
+rm -rf $HOME/.wezterm.lua
+stow --target=$HOME wezterm
+
 # Mise
 echo COPYING .config/mise
 rm -rf $HOME/.config/mise
@@ -66,11 +71,6 @@ rm -rf $HOME/.npmrc
 stow --target=$HOME npm
 
 ### To Stow
-
-# Wezterm Terminal Emulator
-echo COPYING .wezterm.lua
-rm -rf $HOME/.wezterm.lua
-ln -s $DOTFILES/wezterm/wezterm.lua $HOME/.wezterm.lua
 
 # Alactritty Terminal Emulator
 echo COPYING .config/alacritty/alacritty.toml
