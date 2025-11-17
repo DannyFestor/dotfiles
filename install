@@ -35,18 +35,17 @@ echo COPYING .config/starship.toml
 rm -rf $HOME/.config/starship.toml
 stow --target=$HOME starship
 
+# echo COPYING .gitconfig
+rm -rf $HOME/.gitconfig
+rm -rf $HOME/.config/git
+mkdir -p $HOME/.config/git
+stow --target=$HOME git
+git config --global core.excludesFile $HOME/.config/git/.gitignore_global
+
 ### To Stow
 
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
-
-# echo COPYING .gitconfig
-rm -rf $HOME/.gitconfig
-ln -s $DOTFILES/git/.gitconfig $HOME/.gitconfig
-mkdir -p $HOME/.config/git
-rm -rf $HOME/.config/git/.gitignore_global
-ln -s $DOTFILES/git/.gitignore_global ~/.gitignore_global
-git config --global core.excludesFile ~/.gitignore_global
 
 echo COPYING .config/zed/settings.json
 mkdir -p $HOME/.config/zed
