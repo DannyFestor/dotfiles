@@ -24,9 +24,9 @@ setopt HIST_SAVE_NO_DUPS # Do not save duplicate commands to the history file
 
 export HOMEBREW_DOWNLOAD_CONCURRENCY=auto # Set Homebrew download concurrency to auto
 
-[ -f "$HOME/git/dotfiles/zsh/aliases.zsh" ] && source "$HOME/git/dotfiles/zsh/aliases.zsh"
-[ -f "$HOME/git/dotfiles/zsh/services.zsh" ] && source "$HOME/git/dotfiles/zsh/services.zsh"
-[ -f "$HOME/git/dotfiles/zsh/languages.zsh" ] && source "$HOME/git/dotfiles/zsh/languages.zsh"
+[ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
+[ -f "$HOME/.config/zsh/services.zsh" ] && source "$HOME/.config/zsh/services.zsh"
+[ -f "$HOME/.config/zsh/languages.zsh" ] && source "$HOME/.config/zsh/languages.zsh"
 
 # MISE version manager - Mise is a tool to manage your shell environment.
 # eval "$(/Users/dannyfestor/.local/bin/mise activate zsh)"
