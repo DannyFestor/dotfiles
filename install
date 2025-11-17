@@ -15,6 +15,10 @@ echo COPYING .zshrc
 rm -rf $HOME/.zshrc
 rm -rf $HOME/.config/zsh
 stow --target=$HOME zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo INSTALLING ZSHRC
+    KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # TMux
 echo COPYING tmux.conf
@@ -50,6 +54,11 @@ echo COPYING .wezterm.lua
 rm -rf $HOME/.wezterm.lua
 stow --target=$HOME wezterm
 
+# Alactritty Terminal Emulator
+echo COPYING .config/alacritty/alacritty.toml
+rm -rf $HOME/.config/alacritty/
+stow --target=$HOME alacritty
+
 # Mise
 echo COPYING .config/mise
 rm -rf $HOME/.config/mise
@@ -70,31 +79,17 @@ echo COPYING .npmrc
 rm -rf $HOME/.npmrc
 stow --target=$HOME npm
 
+# Ideavim config
+echo COPYING .ideavimrc
+rm -rf $HOME/.ideavimrc
+stow --target=$HOME jetbrains
+
 ### To Stow
-
-# Alactritty Terminal Emulator
-echo COPYING .config/alacritty/alacritty.toml
-rm -rf $HOME/.config/alacritty/
-mkdir -p $HOME/.config/alacritty
-ln -s $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritt.toml
-
-# echo COPYING .ocamlinit
-rm -rf $HOME/.ocamlinit
-ln -s $DOTFILES/ocaml/ocamlinit $HOME/.ocamlinit
 
 echo COPYING scripts
 mkdir -p $HOME/.local/bin
 rm -rf $HOME/.local/bin/t
 # ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
-
-# echo INSTALLING ZSHRC
-if [ !-d "$HOME/.oh-my-zsh" ]; then
-    KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
-echo COPYING ideavim config
-rm -rf $HOME/.ideavimrc
-ln -s $DOTFILES/jetbrains/.ideavimrc $HOME/.ideavimrc
 
 # installing fzf-tab
 mkdir -p $HOME/.config/
