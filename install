@@ -84,13 +84,6 @@ echo COPYING .ideavimrc
 rm -rf $HOME/.ideavimrc
 stow --target=$HOME jetbrains
 
-### To Stow
-
-echo COPYING scripts
-mkdir -p $HOME/.local/bin
-rm -rf $HOME/.local/bin/t
-# ln -s $DOTFILES/scripts/t $HOME/.local/bin/t
-
 # installing fzf-tab
 mkdir -p $HOME/.config/
 git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/
