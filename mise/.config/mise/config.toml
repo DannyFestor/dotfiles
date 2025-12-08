@@ -14,7 +14,6 @@ go = "latest"
 zig = "latest"
 pnpm = "latest"
 yarn = "latest"
-atlas = "latest"
 biome = "latest"
 odin = "dev-2025-11"
 "go:github.com/air-verse/air" = "latest"
@@ -27,6 +26,9 @@ odin = "dev-2025-11"
 "go:go.uber.org/mock/mockgen" = "latest"
 "go:github.com/sqlc-dev/sqlc/cmd/sqlc" = "latest"
 "go:github.com/a-h/templ/cmd/templ" = "latest"
+"go:github.com/go-delve/delve/cmd/dlv" = "latest"
+atlas = "latest"
+"github:odin-lang/Odin" = "latest"
 
 [settings]
 experimental = true
