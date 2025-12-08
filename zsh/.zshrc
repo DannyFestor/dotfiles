@@ -71,3 +71,6 @@ if [ -f '/Users/dannyfestor/Freelance/qualita/lazulipdp/google-cloud-sdk/path.zs
 if [ -f '/Users/dannyfestor/Freelance/qualita/lazulipdp/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dannyfestor/Freelance/qualita/lazulipdp/google-cloud-sdk/completion.zsh.inc'; fi
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/dannyfestor/.antigravity/antigravity/bin:$PATH"
