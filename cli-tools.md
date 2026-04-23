@@ -18,13 +18,15 @@
 - btop - a graphical and efficient alternative to htop
 - ffmpeg - a complete, cross-platform solution to record, convert and stream audio and video
   - usage: `ffmpeg -i input.mp4 -vcodec libx264 -crf 20 output.mp4` to compress video file
-- youtube-dl - a command-line program to download videos from YouTube.com and a few
+- yt-dlp - a youtube-dl fork with additional features and fixes
   - usage: `youtube-dl <video_url>` to download video
 - jq - a lightweight and flexible command-line JSON processor
 - wget - a network utility to retrieve files from the web
 - curl - a command-line tool for transferring data with URL syntax
 - gzip - a file format and a software application used for file compression and decompression
 - gh - GitHub’s official command line tool
+  - gh-dash (install with `gh extension install dlvhdr/gh-dash`, run with `gh dash`) - a terminal dashboard for GitHub
+  - usage: `gh repo clone owner/repo` to clone a GitHub repository
 - git - a free and open source distributed version control system
 - cowsay - a configurable talking cow
 - figlet - a program that creates large characters out of ordinary screen characters
@@ -54,7 +56,6 @@
 - newsboat - a terminal-based RSS/Atom feed reader
 - httpie - a command line HTTP client
 - navi - a command-line cheatsheet tool
-- gh-dash (install with `gh extension install dlvhdr/gh-dash`, run with `gh dash`) - a terminal dashboard for GitHub
 - posting - A powerful HTTP client that lives in your terminal. (like postman, insomnia but CLI)
 - harlequin - The SQL IDE for Your Terminal
 - serpl - search and replace keywords in an entire folder
@@ -113,3 +114,13 @@
 - imageoptim - a GUI tool to optimize images
 - logseq - a local-first, non-linear, markdown-based knowledge management and collaboration platform
 - super-productivity - a todo list and time tracker app designed to boost your productivity
+
+# AI applications
+- scriberr - speech to text, for transcribing meeting audio with speaker diarization
+  - workflow: record with OBS studio, export audio as mp3 using ffmpeg `ffmpeg -i input.mp4 -c:a libmp3lame -q:a 2 output.mp3`, launch `scriberr` from terminal in ~/Stream, use browser at http://localhost:8080
+- lm-studio - a desktop application to run and manage large language models locally with a GUI
+  - can be used as server as well
+- ollama - run and manage large language models locally
+- stabilitymatrix - a desktop application for generating images using Stable Diffusion models
+  - comfyui - a GUI for Stable Diffusion
+  - usage: run comfyui server, open browser at http://localhost:8188 to access GUI
