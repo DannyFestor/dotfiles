@@ -15,10 +15,15 @@ echo COPYING .zshrc
 rm -rf $HOME/.zshrc
 rm -rf $HOME/.config/zsh
 stow --target=$HOME zsh
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo INSTALLING ZSHRC
-    KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
+# Install autosuggestions and syntax highlighting plugins for zsh
+mkdir -r $HOME/.zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions
+git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/plugins/zsh-autocomplete
+# if [ ! -d "$HOME/.oh-my-zsh" ]; then
+#     echo INSTALLING ZSHRC
+#     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# fi
 
 # TMux
 echo COPYING tmux.conf

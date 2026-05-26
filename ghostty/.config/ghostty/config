@@ -1,5 +1,5 @@
 # Theme
-theme = Catppuccin Macchiato
+theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 
 # Font
 font-family = "JetBrainsMonoNL NFM Medium"
@@ -28,3 +28,6 @@ cursor-style-blink = false
 
 # Scroll
 mouse-scroll-multiplier = 1.5
+
+# Option as alt
+macos-option-as-alt = true
