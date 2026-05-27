@@ -84,6 +84,11 @@ echo COPYING .npmrc
 rm -rf $HOME/.npmrc
 stow --target=$HOME npm
 
+# PNPM configuration for mac
+echo COPYING pnpm config.yaml to ~/Library/Preferences/pnpm
+rm -rf $HOME/Library/Preferences/pnpm
+stow --target=$HOME pnpm
+
 # Ideavim config
 echo COPYING .ideavimrc
 rm -rf $HOME/.ideavimrc
