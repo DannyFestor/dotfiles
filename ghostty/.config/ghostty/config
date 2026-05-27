@@ -1,6 +1,9 @@
 # Theme
 theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 
+# Colors
+term = xterm-256color
+
 # Font
 font-family = "JetBrainsMonoNL NFM Medium"
 font-style = Regular
