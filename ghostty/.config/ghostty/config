@@ -14,7 +14,7 @@ adjust-cell-height = 40%
 adjust-cursor-height = 40%
 
 # Background
-background-opacity = 0.95
+background-opacity = 0.97
 background-blur-radius = 20
 
 # Window
@@ -30,7 +30,7 @@ cursor-style = "block"
 cursor-style-blink = false
 
 # Scroll
-mouse-scroll-multiplier = 1.5
+mouse-scroll-multiplier = 1.2
 
 # Option as alt
 macos-option-as-alt = true

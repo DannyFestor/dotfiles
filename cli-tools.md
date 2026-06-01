@@ -7,12 +7,14 @@
 - tlrc (tldr) - a rust implementation of the tldr command line client
 - tmux - terminal multiplexer
 - neovim - a hyperextensible Vim-based text editor
-- fzf - a command-line fuzzy finder > usage `fzf` to start fuzzy finder | `cat file.txt \| fzf` to fuzzy search in file
+- fzf - a command-line fuzzy finder > usage `fzf` to start fuzzy finder | `cat file.txt | fzf` to fuzzy search in file
+- znap - a zsh plugin manager with a focus on speed and simplicity (use `znap clone <org/repo>` to install plugins, `znap pull` to update plugins)
 - eza - a modern replacement for ls
 - zoxide - a smarter cd command
 - fd - a simple, fast and user-friendly alternative to find
 - ripgrep - a line-oriented search tool that recursively searches your current directory for a regex pattern
 - bat - a cat clone with syntax highlighting and Git integration
+- dust - disk space analyzer. best use `dust -r -D -d 1`
 - lazygit - a simple terminal UI for git commands
 - lazydocker - a simple terminal UI for docker commands
 - btop - a graphical and efficient alternative to htop
