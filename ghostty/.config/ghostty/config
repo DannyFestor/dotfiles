@@ -30,7 +30,7 @@ cursor-style = "block"
 cursor-style-blink = false
 
 # Scroll
-mouse-scroll-multiplier = 1.2
+mouse-scroll-multiplier = 0.8
 
 # Option as alt
 macos-option-as-alt = true
