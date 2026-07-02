@@ -24,3 +24,5 @@
 	insteadOf = https://github.com/
 [interactive]
 	diffFilter = diff-so-fancy --patch
+[safe]
+	directory = /app
